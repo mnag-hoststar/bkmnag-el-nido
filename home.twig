@@ -1,0 +1,39 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+
+<header class="bk-header">
+	<div class="companyheader clearfix">
+		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+		{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+	</div>
+	{{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+</header>
+
+
+<section class="bk-section">
+	{{widget('feature', 'featurehome', {"header": "Digital Brilliance", "strapline": "I think that, as life is action and passion, we should share the passion and action of our time at peril of being judged not to have lived at all.", "buttonText":"Share an Action","defaultBgImg": asset('images/feature-bg.jpg'), 'positionTopPercentage': '50','showBtn': true})|raw}}
+</section>
+
+
+<div class="main">
+	<div class="container clearfix">
+		{{zone('main')|raw}}
+	</div>
+</div>
+
+
+<footer class="bk-footer">
+	<div class="container clearfix">
+		<div class="footerleft">
+		{{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+		</div>
+		<div class="footerright">
+		{{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+		</div>
+	</div>
+</footer>
+
+
+{% endblock %}

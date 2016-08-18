@@ -1,0 +1,403 @@
+// ------------------------------------
+// BaseKit Standard Theme: LESS > Theme
+// ------------------------------------
+
+
+// -----------------------------
+// #Table of Contents
+// -----------------------------
+
+
+// 1. #TYPOGRAPHY
+// 2. #CUSTOM PAGE
+// 3. #HEADER
+// 4. #FOOTER
+
+
+
+// -----------------------------
+// 1. #TYPOGRAPHY
+// -----------------------------
+
+
+// Colour Swatches
+// ---------------
+
+// @color-swatch1: Background
+// @color-swatch2: Contrast
+// @color-swatch3: Buttons
+// @color-swatch4: Headings
+// @color-swatch5: Paragraph
+// @color-swatch6: Navigation Links
+// @color-swatch7: Spare
+
+
+// Colour Variables
+// ----------------
+
+@bg-color: @color-swatch1;          // Background
+@contrast-color: @color-swatch2;    // Contrast Colour
+@button-color: @color-swatch3;      // Button BG Colour
+@heading-color: @color-swatch4;     // Heading Text Colour (H1 - H4)
+@paragraph-color: @color-swatch5;   // Paragraph Text Colour
+@nav-color: @color-swatch6;         // Nav Link Colour
+@spare-color: @color-swatch7;       // Spare Colour
+
+
+// Font Swatches
+// -------------
+
+// font1:  Heading 1
+// font2:  Heading 2
+// font3:  Heading 3
+// font4:  Heading 4
+// font5:  Paragraph
+// font6:  Navigation Link
+// font7:  Buttons
+// font8:  Feature Headline
+// font9:  Feature Strapline
+// font10: Company Name (Logo)
+
+
+body {
+	font-smooth: always;
+	font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: geometricPrecision;
+}
+
+a {
+	cursor: pointer;
+}
+
+
+h1, h2, h3, h4, h5 {
+}
+
+h1 {
+	@media @tablet {
+		font-size: bkscale(@font-swatch1-font-size,0.85);
+		line-height: bkscale(@font-swatch1-line-height,0.85);
+	}
+	@media @mobile {
+		font-size: bkscale(@font-swatch1-font-size,0.7);
+		line-height: bkscale(@font-swatch1-line-height,0.7);
+	}
+}
+
+h2 {
+	@media @tablet {
+		font-size: bkscale(@font-swatch2-font-size,0.85);
+		line-height: bkscale(@font-swatch2-line-height,0.85);
+	}
+	@media @mobile {
+		font-size: bkscale(@font-swatch2-font-size,0.7);
+		line-height: bkscale(@font-swatch2-line-height,0.7);
+	}
+}
+
+h3 {
+	@media @tablet {
+		font-size: bkscale(@font-swatch3-font-size,0.85);
+		line-height: bkscale(@font-swatch3-line-height,0.85);
+	}
+	@media @mobile {
+		font-size: bkscale(@font-swatch3-font-size,0.7);
+		line-height: bkscale(@font-swatch3-line-height,0.7);
+	}
+}
+
+h4 {
+	@media @tablet {
+		font-size: bkscale(@font-swatch4-font-size,0.85);
+		line-height: bkscale(@font-swatch4-line-height,0.85);
+	}
+	@media @mobile {
+		font-size: bkscale(@font-swatch4-font-size,0.7);
+		line-height: bkscale(@font-swatch4-line-height,0.7);
+	}
+}
+
+h5 {
+	font-family: @font-swatch4-font-family;
+	font-size: @font-swatch5-font-size;
+	font-weight: @font-swatch5-font-weight;
+	line-height: @font-swatch5-line-height;
+	color: @font-swatch4-color;
+	letter-spacing: @font-swatch4-letter-spacing;
+	@media @tablet {
+		font-size: bkscale(@font-swatch5-font-size,0.85);
+		line-height: bkscale(@font-swatch5-line-height,0.85);
+	}
+	@media @mobile {
+		font-size: bkscale(@font-swatch5-font-size,0.7);
+		line-height: bkscale(@font-swatch5-line-height,0.7);
+	}
+}
+
+blockquote {
+	border: 1px solid @contrast-color;
+	padding: 30px;
+	font-style: italic;
+	color: @button-color;
+	font-size: @font-swatch4-font-size;
+	&:before {
+		display: none;
+	}
+}
+
+.content .bk-content-text ol {
+	list-style-position: inherit;
+}
+
+
+
+// -----------------------------
+// 2. #CUSTOM PAGE
+// -----------------------------
+
+
+body.edit .widget.navigation, body.edit .widget.extendednavigation {
+	overflow: visible;
+}
+
+
+
+// -----------------------------
+// 3. #HEADER & #BK-NAV
+// -----------------------------
+
+
+.bk-header {
+	padding: 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 9999;
+	@media @tablet {
+		background-color: @bg-color;
+		display: inline-block;
+		padding: 30px;
+		width: 100%;
+	}
+	.companyheader {
+		display: inline-block;
+		vertical-align: middle;
+		@media @tablet {
+			display: block;
+			width: 90%;
+			float: left;
+		}
+	}
+}
+
+.bk-pt-default {
+	.bk-header {
+		position: relative;
+	}
+	.main {
+		padding: 60px 0;
+		@media @tablet {
+			padding: 40px 0;
+		}
+	}
+}
+
+
+
+// -----------------------------
+// 4. #FOOTER
+// -----------------------------
+
+.bk-footer {
+	background-color: @spare-color;
+	color: lighten(@paragraph-color, 20%);
+	padding: 2em 0;
+	.widget.profile {
+		.bk-profile-socialicons {
+			margin: 0;
+			span a {
+				background-color: @contrast-color;
+			}
+		}
+	}
+}
+
+.footerright, .footerleft {
+	display: inline-block;
+	vertical-align: middle;
+	width: 49.5%;
+	@media @mobile {
+		width: 100%;
+		text-align: center !important;
+		padding: 10px 0;
+	}
+}
+
+.footerright {
+	text-align: right;
+}
+
+.bk-footer h1,
+.bk-footer h2,
+.bk-footer h3,
+.bk-footer h4 {
+	color: @nav-color;
+	padding-bottom: 1em;
+}
+
+
+
+
+// -----------------------------
+// 5. #CONTENT
+// -----------------------------
+
+.widget.content {
+	padding: 0;
+	overflow: hidden;
+}
+
+.widget.content span.expand {
+	font-family: @font-swatch7-font-family;
+	margin: 10px 0;
+	cursor: pointer;
+	display: inline-block;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
+.expand .more, .expand .less {
+	&:hover {
+		color: @heading-color;
+	}
+}
+
+
+
+// -----------------------------
+// 6. #GENERAL FORMS
+// -----------------------------
+
+input,
+textarea,
+select,
+.widget.profile form fieldset input {
+	background: @bg-color;
+	text-indent: 10px;
+	padding: 8px;
+	border: 1px solid @contrast-color;
+	margin-bottom: 1em;
+	.transition (all, 0.5s, ease);
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	&:focus,
+	&:hover {
+		.transition (all, 0.5s, ease);
+		border: 1px solid darken(@contrast-color, 20%);
+	}
+}
+
+input, select {
+	height: 40px;
+}
+
+textarea {
+	height: 104px;
+}
+
+label {
+	display: inline-block;
+	padding-bottom: .4em;
+}
+
+select {
+	cursor: pointer;
+	position: relative;
+	border-radius: 0;
+	background: image('/images/arrow-small-down.svg') no-repeat 98% center;
+	background-size: 24px;
+}
+
+
+
+/* ===============================
+   ECOM
+   =============================== */
+
+
+
+
+// Basket Summary
+.basket-summary-items-table {
+	border-collapse: collapse;
+	width: 100%;
+	.image-wrap {
+		background-position: 10000px;
+		line-height: 0;
+		text-align: center;
+		padding: 30px;
+		img {
+			max-width: 100%;
+			max-height: 200px;
+		}
+	}
+	td {
+		padding: 10px 0;
+	}
+	tr {
+		border-bottom: solid 1px darken(@color-swatch1, 10%);
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+	.basket-summary-subtotal {
+		padding: 20px;
+	}
+}
+
+.basket-summary-amount,
+.basket-summary-subtotal {
+	text-align: center;
+}
+
+.basket-summary-quantitybtn {
+	button.btn {
+		padding: 7px 18px;
+	}
+}
+
+.basket-summary-items-column {
+	width: 30%;
+}
+
+.quantity-number {
+	display: inline-block;
+	min-width: 40px;
+	text-align: center;
+}
+
+
+
+
+
+// Clearfix
+// --------
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
