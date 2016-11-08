@@ -692,14 +692,16 @@
 // ------------
 
 
-.button, .widget.button button, .btn,
+.widget.button button, .btn,
 button.btn,
 .contactform button.btn,
+.advancedcontactform__button,
 .widget.profile fieldset button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.tweet a, .widget.dropbox button,
 .widget.signupform fieldset button.btn,
 .blog-search-submit-button,
+.blog-post-more-link a,
 .ecom-product-go-to-checkout-btn, .ecom-product .btn,
 .productlist-search button,
 .widget.ecomproduct .ecom-product .btn,
@@ -716,6 +718,7 @@ button.btn,
 	line-height: @font-swatch7-line-height;
 	letter-spacing: .1em;
 	padding: 8px 30px;
+	text-decoration: none;
 	text-transform: uppercase;
 	.transition (all, 0.5s, ease);
 	&:hover {
@@ -879,12 +882,8 @@ button.btn,
 		input {
 			height: 40px;
 			width: 100%;
-			margin-bottom: 0;
 		}
 		button {
-			position: absolute;
-			bottom: 0;
-			right: 0;
 		}
 	}
 }
@@ -1126,9 +1125,6 @@ hr.line {
 				height: 40px;
 			}
 			button {
-				position: absolute;
-				top: 0;
-				right: 0;
 			}
 		}
 	}

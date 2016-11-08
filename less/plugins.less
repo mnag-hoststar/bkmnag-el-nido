@@ -38,7 +38,7 @@
 				color: @button-color;
 			}
 		}
-		.blog-post-more-link a {
+		.blog-post-more-link a { /*
 			font-family: @font-swatch7-font-family;
 			font-size: @font-swatch7-font-size;
 			font-weight: @font-swatch7-font-weight;
@@ -50,11 +50,11 @@
 			padding: 10px 30px 7px;
 			.transition (all, 0.5s, ease);
 			&:hover {
-				color: @font-swatch7-color;
+				color: @font-swatch7-color-hover;
 				background-color: @font-swatch7-background-color-hover;
 				.transition (all, 0.5s, ease);
 				cursor: pointer;
-			}
+			} */
 		}
 		.blog-post-more-link,
 		.blog-post-date {
@@ -108,15 +108,11 @@
 	input {
 		height: 40px;
 		width: 100%;
-		margin-bottom: 0;
 		appearance: none;
 		-moz-appearance: none;
 		-webkit-appearance: none;
 	}
 	button {
-		position: absolute;
-		bottom: 0;
-		right: 0;
 	}
 }
 
@@ -231,15 +227,10 @@
 				width: 80%;
 			}
 			input {
-				margin: 0;
-				padding-right: 130px;
 			}
 			.productlist-search {
 				position: relative;
 				button {
-					position: absolute;
-					right: 0;
-					bottom: 0;
 				}
 			}
 			label, select, input {

@@ -291,18 +291,23 @@ select,
 .advancedcontactform textarea {
 	background: @bg-color;
 	border: none;
-	border-bottom: 2px solid @contrast-color;
+	border-bottom: 1px solid @contrast-color;
 	margin-bottom: 1em;
+	outline: none;
 	padding: 8px 0;
 	text-indent: 0;
 	.transition (all, 0.5s, ease);
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
-	&:focus,
 	&:hover {
 		.transition (all, 0.5s, ease);
-		border-bottom: 2px solid @button-color;
+		border-bottom: 1px solid darken(@contrast-color, 10%);
+	}
+	&:focus {
+		.transition (all, 0.5s, ease);
+		border-bottom: 1px solid @button-color;
+		box-shadow: 0 1px 0 0 @button-color;
 	}
 }
 
