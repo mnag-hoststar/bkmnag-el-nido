@@ -46,9 +46,10 @@
 
 
 .widget.companyname {
-	display: inline-block;
+	display: table-cell;
 	vertical-align: middle;
 	text-transform: uppercase;
+	padding-left: 10px;
 	a {
 		@media @mobile {
 			font-size: bkscale(@font-swatch10-font-size,0.9);
@@ -67,12 +68,11 @@
 
 
 .widget.logo {
-	display: inline-block;
-	margin-right: 10px;
+	display: table-cell;
 	vertical-align: middle;
 	z-index: 1000;
 	a img {
-		max-height: 40px;
+		max-height: 60px;
 		width: auto!important;
 		@media @mobile {
 			max-height: 40px;
@@ -113,7 +113,7 @@
 					border-bottom: 2px solid transparent;
 					.transition (all, 0.5s, ease);
 					&:hover {
-						border-bottom: 2px solid @bg-color;
+						border-bottom: 2px solid @font-swatch6-color;
 						.transition (all, 0.5s, ease);
 					}
 				}
@@ -135,7 +135,7 @@
 			}
 			&:hover {
 				ul {
-					background-color: darken(@color-swatch2, 10%);
+					background-color: darken(@color-swatch1, 10%);
 					visibility: visible; /* shows sub-menu */
 					opacity: 1;
 					padding: 10px;
@@ -160,20 +160,58 @@
 	}
 }
 
+// Extended Navigation - Home Page
+// -------------------------------
+
+
+.bk-pt-home {
+	.widget.extendednavigation {
+		ul {
+			li {
+				a {
+					color: @font-swatch6-background-color;
+					span {
+						&:hover {
+							border-bottom: 2px solid @font-swatch6-background-color;
+						}
+					}
+				}
+				.text {
+					color: @font-swatch6-background-color;
+					&:hover {
+						color: @font-swatch6-background-color;
+					}
+				}
+				&.folder {
+					&:after {
+						border-top-color: @font-swatch6-background-color;
+					}
+				}
+				&:hover {
+					ul {
+						background-color: darken(@color-swatch2, 10%);
+					}
+				}
+			}
+		}
+	}
+}
+
+
 // Responsive - Extended Navigation
 // --------------------------------
 
 @media @tablet {
 
 	.widget .extendednavigation a.pull {
-		top: 4px;
+		top: 12px;
 		&:after {
 			top: 10px;
 			left: 0;
 			height: 3px;
 			width: 30px;
-			background-color: @button-color;
-			box-shadow: 0 9px 0 @button-color, 0 18px 0 @button-color;
+			background-color: @font-swatch6-color;
+			box-shadow: 0 9px 0 @font-swatch6-color, 0 18px 0 @font-swatch6-color;
 		}
 	}
 
@@ -187,19 +225,45 @@
 		border-bottom: 1px solid fade(@color-swatch6, 10%);
 		width: 100%;
 		padding: 0;
+		text-align: center;
 		&:last-child {
 			border-bottom: none;
 		}
 		a {
-			padding: 10px 30px;
+			padding: 10px 0;
+			color: @font-swatch6-color;
+			span {
+				text-transform: uppercase;
+				padding: 10px 0;
+				border-bottom: none !important;
+				.transition (all, 0.5s, ease);
+				&:hover {
+					border-bottom: none !important;
+					.transition (all, 0.5s, ease);
+				}
+			}
+		}
+		.text {
+			color: @font-swatch6-color !important;
+		}
+		&:hover {
+			ul {
+				background-color: lighten(@color-swatch2, 45%) !important;
+			}
+		}
+		&.folder {
+			&:after {
+				border-top-color: @font-swatch6-color !important;
+			}
 		}
 	}
 
 	.widget .extendednavigation ul li.folder ul li {
 		margin: 0;
-		padding: 0;
+		padding: 10px 0;
 		a {
 			padding: 0;
+			color: @button-color;
 		}
 	}
 
@@ -347,12 +411,12 @@
 @media @tablet {
 
 	.widget.feature {
-		.feature-bgimg {
+		/* .feature-bgimg {
 			height: 85% !important;
 			height: 85vh !important;
 			.content {
 			}
-		}
+		} */
 		h2 {
 			font-size: bkscale(@font-swatch8-font-size,0.6);
 			line-height: bkscale(@font-swatch8-line-height,0.6);

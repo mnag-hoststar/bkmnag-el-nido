@@ -1,12 +1,9 @@
 {
 	"name":"El Nido",
-	"thumbnail":"thumbnail.png",
-	"screenshot":"elnido-screenshot.png",
 	"templateType":"standard",
 	"pageTypes":["home"],
-	"tags": {
-	"en": ["minimal", "clean", "blog", "photography", "modern", "unique", "flexible", "open", "simple", "news", "sans-serif"]
-	},
+	"thumbnail":"thumbnail.png",
+	"screenshot":"elnido-screenshot.png",
 	"images": [
 		"images/feature-bg.jpg",
 		"images/gallery/1.jpg",
@@ -26,46 +23,10 @@
 			"color5":"#5e626e",
 			"color6":"#2e373d",
 			"color7":"#ffffff"
-		},
-		"Swatch 2": {
-			"color1":"#f2f3f5",
-			"color2":"#eed0cf",
-			"color3":"#e89c96",
-			"color4":"#39424e",
-			"color5":"#5e626e",
-			"color6":"#2e373d",
-			"color7":"#ffffff"
-		},
-		"Swatch 3": {
-			"color1":"#f2f3f5",
-			"color2":"#d2d1ea",
-			"color3":"#a19dd9",
-			"color4":"#39424e",
-			"color5":"#5e626e",
-			"color6":"#2e373d",
-			"color7":"#ffffff"
-		},
-		"Swatch 4": {
-			"color1":"#f2f3f5",
-			"color2":"#eec6c1",
-			"color3":"#e56d59",
-			"color4":"#39424e",
-			"color5":"#5e626e",
-			"color6":"#2e373d",
-			"color7":"#ffffff"
-		},
-		"Swatch 5": {
-			"color1":"#f2f3f5",
-			"color2":"#deced5",
-			"color3":"#c197a6",
-			"color4":"#39424e",
-			"color5":"#5e626e",
-			"color6":"#2e373d",
-			"color7":"#ffffff"
 		}
 	},
 	"fontSwatch": {
-	   "title": "Arvo",
+	   "title": "Arvo / Bree Serif",
 		"font1": {
 			"font-family": "\"Bree Serif\", \"Merriweather\", Georgia, serif",
 			"font-size": "40px",
@@ -111,11 +72,11 @@
 			"font-size": "18px",
 			"font-weight": "400",
 			"line-height": "28px",
-			"color": "@color-swatch1",
-			"color-hover": "@color-swatch1",
+			"color": "@color-swatch3",
+			"color-hover": "@color-swatch3",
 			"letter-spacing": "inherit",
 			"background-color": "@color-swatch1",
-			"background-color-hover": "transparent"
+			"background-color-hover": "@color-swatch1"
 		},
 		"font7": {
 			"font-family": "\"Arvo\", Georgia, serif",
