@@ -80,7 +80,7 @@
 		},
 		"font7": {
 			"font-family": "\"Arvo\", Georgia, serif",
-			"font-size": "20px",
+			"font-size": "14px",
 			"font-weight": "700",
 			"line-height": "20px",
 			"color": "@color-swatch7",
