@@ -340,6 +340,30 @@ select {
 }
 
 
+.advancedcontactform  {
+	input[type="checkbox"] {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background: white;
+		border: 1px solid lightgray;
+		box-shadow: 0 1px 0 0 white;
+		display: inline-block;
+		height: 20px;
+		margin: 10px;
+		vertical-align: middle;
+		width: 20px;
+		&:focus {
+			box-shadow: none;
+		}
+		&:checked {
+			background: image('/images/arrow-small-down.svg') no-repeat center center;
+		}
+	}
+}
+
+
+
 
 /* ===============================
    ECOM
