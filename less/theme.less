@@ -355,12 +355,15 @@ select {
 		margin: 10px;
 		vertical-align: middle;
 		width: 24px;
+		&:hover {
+			border: 1px solid darken(@contrast-color, 10%);
+		}
 		&:focus {
 			box-shadow: none;
 		}
 		&:checked {
 			background: image('/images/hs-icon_check-l.svg') no-repeat center;
-			border-bottom: 1px solid @button-color;
+			border: 1px solid @button-color;
 		}
 	}
 }
