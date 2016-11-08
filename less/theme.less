@@ -291,9 +291,10 @@ select,
 .advancedcontactform textarea {
 	background: @bg-color;
 	border: none;
-	border-bottom: 1px solid @contrast-color;
+	border-bottom: 2px solid @contrast-color;
 	margin-bottom: 1em;
 	padding: 8px 0;
+	text-indent: 0;
 	.transition (all, 0.5s, ease);
 	appearance: none;
 	-moz-appearance: none;
@@ -301,7 +302,7 @@ select,
 	&:focus,
 	&:hover {
 		.transition (all, 0.5s, ease);
-		border-bottom: 1px solid darken(@contrast-color, 20%);
+		border-bottom: 2px solid @button-color;
 	}
 }
 

@@ -17,7 +17,7 @@
 	{
 		"Swatch 1": {
 			"color1":"#ffffff",
-			"color2":"#3553c4",
+			"color2":"#e3e3e3",
 			"color3":"#3553c4",
 			"color4":"#39424e",
 			"color5":"#5e626e",
@@ -84,9 +84,10 @@
 			"font-weight": "700",
 			"line-height": "20px",
 			"color": "@color-swatch7",
+			"color-hover": "@color-swatch3",
 			"letter-spacing": "1px",
 			"background-color": "@color-swatch3",
-			"background-color-hover": "@color-swatch4"
+			"background-color-hover": "transparent"
 		},
 		"font8": {
 			"font-family": "\"Bree Serif\", \"Merriweather\", Georgia, serif",
@@ -109,7 +110,7 @@
 			"font-size": "26px",
 			"font-weight": "400",
 			"line-height": "26px",
-			"color": "@color-swatch2",
+			"color": "@color-swatch3",
 			"letter-spacing": "inherit"
 		}
 	}
