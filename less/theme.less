@@ -319,7 +319,7 @@ input, select {
 }
 
 textarea {
-	height: 104px;
+	height: 100px;
 }
 
 label,
@@ -350,10 +350,6 @@ select {
 // --------------------------
 
 
-
-.advancedcontactform__form-group {
-	margin-bottom: 1em;
-}
 
 .advancedcontactform {
 	.option-item--checkbox {
@@ -411,29 +407,62 @@ select {
 			opacity: 1;
 		}
 	}
-	input[type="radio"] {
-		-webkit-appearance: none;
-		-moz-appearance: radio;
-		appearance: none;
-		background: white;
-		background-size: 24px;
-		background-position: center;
-		border: 1px solid lightgray;
-		box-shadow: 0 1px 0 0 white;
-		display: inline-block;
-		height: 24px;
-		margin: 12px 12px 12px 0;
-		vertical-align: middle;
-		width: 24px;
-		&:hover {
-			border: 1px solid darken(@contrast-color, 10%);
+	.option-item--radio {
+		width: 100%;
+		position: relative;
+		label {
+			cursor: pointer;
+			margin-left: 40px;
+			margin-bottom: 1em;
+			padding: 0;
+			display: inline-block!important;
+			line-height: 25px;
+			position: relative;
+			&:before {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: @bg-color;
+				border: 1px solid @contrast-color;
+				left: -40px;
+				top: 0;
+				.border-radius(50%);
+				.transition(all, 0.3s, ease);
+			}
+			&:hover::before {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				background-color: @bg-color;
+				border: 1px solid darken(@contrast-color, 15%);
+				left: -40px;
+				top: 0;
+				.border-radius(50%);
+				.transition(all, 0.3s, ease);
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				width: 25px;
+				height: 25px;
+				opacity: 0;
+				border: 1px solid @button-color;
+				background: image('/images/hs-icon_check-l.svg') no-repeat center; 
+				background-color: white;
+				left: -40px;
+				top: 0px;
+				.border-radius(50%);
+				.transition(all, 0.3s, ease);
+			}
 		}
-		&:focus {
-			box-shadow: none;
+		input[type="radio"] {
+			visibility: hidden;
+			position: absolute;
 		}
-		&:checked {
-			background: image('/images/radio.svg') no-repeat center;
-			border: 1px solid @button-color;
+		input[type="radio"]:checked + label:after {
+			opacity: 1;
 		}
 	}
 }
