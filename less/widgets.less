@@ -135,12 +135,26 @@
 			}
 			&:hover {
 				ul {
-					background-color: darken(@color-swatch1, 10%);
+					background-color: @button-color;
 					visibility: visible; /* shows sub-menu */
 					opacity: 1;
 					padding: 10px;
 					transform: translateX(0%);
 					transition-delay: 0s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+					li {
+						a {
+							.text {
+								color: @font-swatch6-background-color;
+								border-bottom: 2px solid transparent;
+								.transition (all, 0.5s, ease);
+								&:hover {
+									color: @font-swatch6-background-color;
+									border-bottom: 2px solid @font-swatch6-background-color;
+									.transition (all, 0.5s, ease);
+								}
+							}
+						}
+					}
 				}
 			}
 			&.folder {
@@ -150,6 +164,7 @@
 					padding: 5px 0;
 					margin: 5px 30px;
 					text-transform: uppercase;
+
 				}
 				&:after {
 					right: 10px;
@@ -189,7 +204,7 @@
 				}
 				&:hover {
 					ul {
-						background-color: darken(@color-swatch2, 10%);
+						background-color: @button-color;
 					}
 				}
 			}
