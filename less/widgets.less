@@ -341,6 +341,9 @@
 							background-color: @spare-color;
 							.transition (all, 0.5s, ease-in);
 						}
+						@media @tablet {
+							font-size: @font-swatch7-font-size;
+						}
 					}
 				}
 			}
@@ -729,6 +732,10 @@ button.btn,
 		cursor: pointer;
 		.transition (all, 0.5s, ease);
 	}
+	@media @mobile {
+		width: 100%;
+		margin-bottom: 1em;
+	}
 }
 
 
@@ -743,6 +750,8 @@ button.btn,
 	background-repeat: no-repeat;
 	background-position: 20px center;
 	display: inline-block;
+	text-align: center;
+	-webkit-font-smoothing: antialiased;
 	&:hover {
 		background-image: image('/images/social/socialicons-twitter.svg');
 	}
@@ -793,13 +802,17 @@ button.btn,
 		background-position: 20px center;
 		padding: 12px 30px 12px 58px;
 		border: 2px solid @spare-color;
+		border-radius: 40px;
 		text-transform: uppercase;
+		text-align: center;
 		letter-spacing: .1em;
 		font-family: @font-swatch7-font-family;
 		font-size: @font-swatch7-font-size;
 		font-weight: @font-swatch7-font-weight;
+		line-height: @font-swatch7-line-height;
 		background-color: @font-swatch7-background-color;
 		color: @font-swatch7-color;
+		width: 100%;
 		.transition (all, 0.5s, ease);
 		&:hover {
 			background-color: @font-swatch7-background-color-hover;
