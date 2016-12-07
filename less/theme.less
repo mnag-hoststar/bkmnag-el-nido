@@ -222,6 +222,9 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 			margin: 0;
 			span a {
 				background-color: @contrast-color;
+				&:hover {
+					background-color: @paragraph-color;
+				}
 			}
 		}
 	}
@@ -346,7 +349,7 @@ select {
 	}
 	input[type="checkbox"] {
 		-webkit-appearance: none;
-		-moz-appearance: none;
+		-moz-appearance: checkbox;
 		appearance: none;
 		background: white;
 		background-size: 24px;
@@ -366,6 +369,31 @@ select {
 		}
 		&:checked {
 			background: image('/images/hs-icon_check-l.svg') no-repeat center;
+			border: 1px solid @button-color;
+		}
+	}
+	input[type="radio"] {
+		-webkit-appearance: none;
+		-moz-appearance: radio;
+		appearance: none;
+		background: white;
+		background-size: 24px;
+		background-position: center;
+		border: 1px solid lightgray;
+		box-shadow: 0 1px 0 0 white;
+		display: inline-block;
+		height: 24px;
+		margin: 12px 12px 12px 0;
+		vertical-align: middle;
+		width: 24px;
+		&:hover {
+			border: 1px solid darken(@contrast-color, 10%);
+		}
+		&:focus {
+			box-shadow: none;
+		}
+		&:checked {
+			background: image('/images/radio.svg') no-repeat center;
 			border: 1px solid @button-color;
 		}
 	}

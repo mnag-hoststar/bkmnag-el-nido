@@ -84,10 +84,10 @@
 			"font-weight": "700",
 			"line-height": "20px",
 			"color": "@color-swatch7",
-			"color-hover": "@color-swatch3",
+			"color-hover": "@color-swatch7",
 			"letter-spacing": "1px",
 			"background-color": "@color-swatch3",
-			"background-color-hover": "transparent"
+			"background-color-hover": "@color-swatch5"
 		},
 		"font8": {
 			"font-family": "\"Bree Serif\", \"Merriweather\", Georgia, serif",
