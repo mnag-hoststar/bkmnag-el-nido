@@ -315,23 +315,30 @@
 
 
 .bk-section {
+    .widget.feature {
+        overflow: auto;
+		min-height: 100%;
+		height: auto !important;
+    }
 }
 
 .widget.feature {
 	z-index: 0;
 	.feature-bgimg {
-		height: 100% !important;
-		height: 100vh !important;
-		width: 50%;
+		height: auto;
+		min-height: 100%;
+		width: 100%;
 		display: block;
 		.content {
-			text-align: left;
-			position: absolute;
+			float: right;
 			left: 50%;
 			height: 100%;
 			width: 50%;
 			margin: auto 0;
 			background-color: @button-color;
+			&:after {
+				clear: both;
+			}
 			.spare {
 				position: relative;
 				top: 50%;
