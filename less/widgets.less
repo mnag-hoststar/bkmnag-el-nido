@@ -315,10 +315,12 @@
 
 
 .bk-section {
+	min-height: 100%;
+	height: auto;
     .widget.feature {
         overflow: auto;
 		min-height: 100%;
-		height: auto !important;
+		height: auto;
     }
 }
 
@@ -328,22 +330,22 @@
 		height: auto;
 		min-height: 100%;
 		width: 100%;
-		display: block;
 		.content {
+			display: table;
 			float: right;
 			left: 50%;
 			height: 100%;
-			width: 50%;
+			width: 120px 50%;
 			margin: auto 0;
 			background-color: @button-color;
-			&:after {
-				clear: both;
+			@media @mobile {
+				width: 100%;
 			}
 			.spare {
+				display: table-cell;
+				vertical-align: middle;
 				position: relative;
-				top: 50%;
-				transform: translate(0,-50%);
-				margin: 0 10%;
+				padding: 10%;
 				h2 {
 				}
 				h3 {
