@@ -109,7 +109,7 @@
 				margin: 0 30px;
 				span {
 					text-transform: uppercase;
-					padding: 10px 0;
+					padding: 2px 0;
 					border-bottom: 2px solid transparent;
 					.transition (all, 0.5s, ease);
 					&:hover {
@@ -315,28 +315,38 @@
 
 
 .bk-section {
+	min-height: 100%;
+	height: auto;
+    .widget.feature {
+        overflow: auto;
+		min-height: 100%;
+		height: auto;
+    }
 }
 
 .widget.feature {
 	z-index: 0;
 	.feature-bgimg {
-		height: 100% !important;
-		height: 100vh !important;
-		width: 50%;
-		display: block;
+		height: auto;
+		min-height: 100%;
+		width: 100%;
 		.content {
-			text-align: left;
-			position: absolute;
+			display: table;
+			float: right;
 			left: 50%;
 			height: 100%;
 			width: 50%;
 			margin: auto 0;
 			background-color: @button-color;
+			@media @mobile {
+				width: 100%;
+			}
 			.spare {
+				display: table-cell;
+				vertical-align: middle;
 				position: relative;
-				top: 50%;
-				transform: translate(0,-50%);
-				margin: 0 10%;
+				padding: 120px 10%;
+				height: 100vh;
 				h2 {
 				}
 				h3 {
@@ -358,6 +368,7 @@
 						}
 						@media @tablet {
 							font-size: @font-swatch7-font-size;
+							line-height: @font-swatch7-font-size + 4px;
 						}
 					}
 				}
@@ -427,9 +438,7 @@
 // Responsive Feature
 // ------------------
 
-
-@media @tablet {
-
+@media only screen and (max-height: 800px), @tablet {
 	.widget.feature {
 		/* .feature-bgimg {
 			height: 85% !important;
@@ -452,31 +461,15 @@
 	}
 }
 
-@media only screen and (max-height: 800px) {
+@media @tablet {
 	.widget.feature {
-		/* .feature-bgimg {
-			height: 85% !important;
-			height: 85vh !important;
-			.content {
-			}
-		} */
 		h2 {
-			font-size: bkscale(@font-swatch8-font-size,0.6);
-			line-height: bkscale(@font-swatch8-line-height,0.6);
-		}
-		h3 {
-			font-size: bkscale(@font-swatch9-font-size,0.6);
-			line-height: bkscale(@font-swatch9-line-height,0.6);
-		}
-		.feature-btn button {
-			font-size: bkscale(@font-swatch7-font-size,0.6);
-			line-height: bkscale(@font-swatch7-line-height,0.6);
+			font-size: bkscale(@font-swatch8-font-size,0.55);
 		}
 	}
 }
 
 @media @mobile {
-
 	.widget.feature {
 		.feature-bgimg {
 			height: 100% !important;
