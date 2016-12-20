@@ -96,8 +96,8 @@
 		position: absolute;
 		top: 30px;
 		bottom: 30px;
-		left: auto;
-		right: 30px;
+		left: 0;
+		right: 0;
 	}
 	.extendednavigation {
 		@media @tablet {
@@ -111,15 +111,21 @@
 	}
 	ul {
 		margin: 0 auto;
-		padding: 0;
 		display: block;
+		float: none !important;
+		@media @tablet {
+		    background-color: @bg-color;
+            position: absolute;
+            top: 100%;
+            padding: 20px 20px 5px !important;
+		}
 		li {
 			a {
 				padding: 0;
 				margin: 0 30px;
 				span {
 					text-transform: uppercase;
-					padding: 2px 0;
+					padding: 2px 1px 0;
 					border-bottom: 2px solid transparent;
 					.transition (all, 0.5s, ease);
 					&:hover {
@@ -231,10 +237,12 @@
 	.widget .extendednavigation a.pull {
 		display: inline-block;
 		top: 0;
+		right: 30px;
 		height: 100%;
 		&:after {
 			top: 50%;
 			left: 0;
+			right: 0;
 			height: 3px;
 			width: 30px;
 			background-color: @font-swatch6-color;
@@ -516,7 +524,7 @@
 
 
 .widget.image span.image-title {
-	margin: 10px 0 0;
+	margin: 10px 0 5px;
 	color: @heading-color;
 	&:hover {
 		color: lighten(@color-swatch4, 20%);
@@ -675,6 +683,9 @@
 		font-family: @font-swatch4-font-family;
 		text-transform: uppercase;
 		padding: 15px 10px 5px;
+		@media @mobile {
+		    padding: 15px 10px 17px;
+		}
 	}
 	.description {
 		color: @font-swatch5-color;
