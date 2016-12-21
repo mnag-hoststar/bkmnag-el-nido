@@ -3,7 +3,7 @@
 	"templateType":"standard",
 	"pageTypes":["home"],
 	"thumbnail":"thumbnail.png",
-	"screenshot":"elnido-screenshot.png",
+	"screenshot":"elnido-screenshot.jpg",
 	"images": [
 		"images/feature-bg.jpg"
 	],
