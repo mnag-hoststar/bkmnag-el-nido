@@ -333,42 +333,65 @@
 .bk-section {
 	min-height: 100%;
 	height: auto;
+	
     .widget.feature {
-        overflow: auto;
+		overflow: hidden;
 		min-height: 100%;
-		height: auto;
+		min-height: 100vh;
     }
 }
 
 .widget.feature {
 	z-index: 0;
+	
 	.feature-bgimg {
+	    display: block;
 		height: auto;
 		min-height: 100%;
+		min-height: 100vh;
 		width: 50%;
+		
 		.content {
-			display: table;
-			float: right;
-			height: 100%;
-			width: 100%;
-			margin: auto -100% auto 0;
+		    position: absolute;
+            top: 0;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            display: block;
+            min-height: 100%;
+            min-height: 100vh;
 			background-color: @button-color;
+			
 			@media @mobile {
 				width: 100%;
 				margin: auto 0;
 			}
+			
 			.spare {
-				display: table-cell;
-				vertical-align: middle;
+			    display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flexbox;
+                display: -ms-flex;
+                display: flex;
+                -webkit-box-orient: column;
+                -webkit-box-direction: column;
+                -webkit-flex-direction: column;
+                -moz-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-justify-content: center;
+                -moz-justify-content: center;
+                -ms-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
 				position: relative;
 				padding: 120px 10%;
-				height: 100vh;
-				h2 {
-				}
-				h3 {
-				}
+				min-height: 100%;
+				min-height: 100vh;
+				
 				.feature-btn {
 					display: block;
+					
 					button {
 						background-color: transparent;
 						border: 2px solid @spare-color;
@@ -377,11 +400,13 @@
 						padding: 14px 40px;
 						text-decoration: none;
 						.transition (all, 0.5s, ease-out);
+						
 						&:hover {
 							color: @button-color;
 							background-color: @spare-color;
 							.transition (all, 0.5s, ease-in);
 						}
+						
 						@media @tablet {
 							font-size: @font-swatch7-font-size;
 							line-height: @font-swatch7-font-size + 4px;
@@ -1184,9 +1209,3 @@ hr.line {
 	border: 1px solid @contrast-color;
 	margin-bottom: 2em;
 }
-
-
-
-
-
-

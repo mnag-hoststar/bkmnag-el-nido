@@ -177,6 +177,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	left: 0;
 	right: 0;
 	z-index: 9999;
+	
 	@media @tablet {
 		background-color: @bg-color;
 		display: inline-block;
@@ -184,7 +185,9 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		padding: 30px;
 		position: relative;
 		width: 100%;
+		min-height: 90px;
 	}
+	
 	.companyheader {
 		display: inline-block;
 		vertical-align: middle;
@@ -263,6 +266,11 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 // -----------------------------
 // 5. #CONTENT
 // -----------------------------
+
+.content {
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
 
 .widget.content {
 	padding: 0;
