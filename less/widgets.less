@@ -1,5 +1,5 @@
 // --------------------------------------
-// BaseKit Standard Theme: LESS > Widgets
+// El Nido: LESS > Widgets
 // --------------------------------------
 
 
@@ -10,40 +10,46 @@
 
 //  1.   #LOGO
 //  2.   #COMPANY NAME
-//  3.   #NAVIGATION
-//  4.   #FEATURE
+//  3.   #LANGUAGE SELECTOR
+//  4.   #NAVIGATION
+//  5.   #FEATURE
 
-//  5.   #IMAGES
-//  6.   #GALLERY
-//  7.   #SLIDESHOW
+//  6.   #IMAGES
+//  7.   #GALLERY
+//  8.   #SLIDESHOW
 
-//  8.   #BUTTONS
-//  8.1  -- #STANDARD
-//  8.2  -- #TWEET
-//  8.3  -- #DROPBOX
-//  8.4  -- #CLICK TO CALL
-//  8.5  -- #PAYPAL
+//  9.   #BUTTONS
+//  9.1  -- #STANDARD
+//  9.2  -- #TWEET
+//  9.3  -- #DROPBOX
+//  9.4  -- #CLICK TO CALL
+//  9.5  -- #PAYPAL
 
-//  9.   #CONTACT FORM
-// 10.   #SIGNUP FORM
+// 10.   #CONTACT FORM
+// 11.   #SIGNUP FORM
 
-// 11.   #SOCIAL ICONS
-// 12.   #TWITTER FEED
+// 12.   #SOCIAL ICONS
+// 13.   #TWITTER FEED
 
-// 13.   #DIVIDER (KEYLINE)
-// 14.   #PROFILE
-// 15.   #MAP
-// 16.   #YELP
+// 14.   #DIVIDER (KEYLINE)
+// 15.   #PROFILE
+// 16.   #MAP
+// 17.   #YELP
 
 
 // -----------------------------
-// 1.-2.  #LOGO & #COMPANY NAME
+//  1.  #LOGO
 // -----------------------------
 
+.widget.logo {
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 0;
+}
 
-// Company Name
-// ------------
-
+// -----------------------------
+//  2.  #COMPANY NAME
+// -----------------------------
 
 .widget.companyname {
 	display: table-cell;
@@ -63,32 +69,333 @@
 	text-decoration: none;
 }
 
+// -----------------------------
+//  3.  #LANGUAGE SELECTOR
+// -----------------------------
 
+@language-padding: 0.5em;
 
-// Logo
-// ----
+// General styles
 
+.language-selector {
+	&.language-selector--horizontal,
+	&.language-selector--dropdown {
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+	    z-index: 400;
+        opacity: 1;
+		box-sizing: content-box;
+	    margin: 0 0 0 50%;
+        width: 50%;
+        @transition(opacity, 0.3s, ease);
+        
+        @media @tablet {
+            position: static;
+            margin: 0;
+            width: auto;
+        }
+	}
 
-.widget.logo {
-	display: table-cell;
-	vertical-align: middle;
-	line-height: 0;
+	&.language-selector--light {
+	    background-color: transparent;
+        @media @tablet {
+	        background-color: @spare-color;
+        }
+	}
+	&.language-selector--dark {
+	    background-color: transparent;
+        @media @tablet {
+	        background-color: @button-color;
+        }
+	}
+	
+	&.language-selector--dropdown {
+		height: auto;
+		text-align: left;
+	}
+
+    .language-selector__inner,
+    .language-selector__list,
+    .language-selector__item,
+    .language-selector__link,
+    .language-selector__name,
+    .language-selector__localised-name {
+    	font-family: @font-swatch6-font-family;
+    	font-size: @font-swatch6-font-size;
+    	font-weight: @font-swatch6-font-weight;
+    	line-height: @font-swatch6-line-height;
+    	letter-spacing: @font-swatch6-letter-spacing;
+    	color: @font-swatch6-color;
+    }
+    &.language-selector--hide {
+        opacity: 0;
+    }
+}
+	
+// Inner
+
+.language-selector__inner {
+    .language-selector & {
+		height: 0;
+	    box-sizing: content-box;
+    	padding: @font-swatch6-line-height+4px 40px @language-padding*3 40px;
+    }
+    
+    .language-selector.language-selector--horizontal & {
+		padding: 10px 65px;
+		height: auto;
+		@media @tablet {
+		    padding: 10px 30px;
+		}
+    }
+}
+	
+// List
+
+.language-selector__list {
+    .language-selector & {
+	    min-width: auto;
+    }
+	
+	.language-selector.language-selector--dropdown & {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0 60px;
+		min-width: auto;
+	    max-width: ~"calc(100% - 1em)";
+        @media @tablet {
+	    	max-width: 100%;
+		    padding: 0 20px;
+        }
+		@media @mobile {
+			width: 100%;
+		}
+	}
+	
+	.language-selector.language-selector--dropdown.language-selector--flag & {
+		@media @mobile {
+			width: auto;
+		}
+	}
+}
+	
+// Item
+
+.language-selector__item {
+	.language-selector.language-selector--light &,
+	.language-selector.language-selector--dark & {
+		cursor: pointer;
+	    position: relative;
+		border: none;
+		background-color: transparent;
+		max-width: 100%;
+		.transition(all, 0.75s, ease);
+		
+		@media @mobile {
+	        width: auto;
+		}
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal & {
+		margin: @language-padding/2 0 @language-padding/2 @language-padding;
+    	border: 2px solid @spare-color;
+		.border-radius(33px);
+		.transition (all, 0.5s, ease-out);
+		
+		.language-selector--light&,
+		.language-selector--dark& {
+			background-color: @button-color;
+			
+			&:hover {
+				background-color: @font-swatch7-background-color-hover;
+			}
+			
+			&--current, &--current:hover {
+    	        border: 2px solid @spare-color;
+        	    background-color: @spare-color;
+			}
+		}
+		.language-selector--light& {
+			&--current, &--current:hover {
+        	    @media @tablet {
+        	        border: 2px solid darken(@spare-color, 10%);
+            	    background-color: darken(@spare-color, 10%);
+        	    }
+			}
+		}
+	}
+	.language-selector.language-selector--dropdown & {
+	    .border-radius(0);
+	    
+		@media @mobile {
+		    width: auto;
+		}
+		
+		&--current, &--current:hover {
+	        border: 2px solid @spare-color;
+            .border-radius(33px);
+            margin: @language-padding 0;
+		}
+		
+		.language-selector--light&,
+		.language-selector--dark& {
+        	background-color: @button-color;
+	        border: 2px solid @spare-color;
+	        
+	        &:nth-child(2) {
+	            border-bottom: none;
+	        }
+			
+			&:last-child {
+	            border-top: none;
+			}
+			
+			&:hover {
+        	    background-color: @font-swatch7-background-color-hover;
+			}
+			
+			&--current, &--current:hover {
+    	        border: 2px solid @spare-color;
+        	    background-color: @button-color;
+			}
+		}
+	}
+	
+	// Current Item
+	
+	&--current {
+	    &:after {
+    		.language-selector.language-selector--dropdown & {
+				position: absolute;
+        		content: "\25be";
+        		top: 50%;
+        		right: 0;
+        		margin-top: -(@font-swatch6-line-height/4);
+        		width: @language-padding*4;
+    		    background-color: transparent;
+        		line-height: @font-swatch6-line-height/2;
+        	    font-size: @font-swatch6-font-size;
+        		color: @spare-color;
+        		text-align: center;
+    		}
+	    }
+	}
 }
 
+// Link
 
+.language-selector__link {
+	.language-selector & {
+		box-sizing: border-box;
+		padding: 0 @language-padding*2;
+		border: none;
+		hyphens: auto;
+	}
+	
+	// Horizontal - Item
+	
+	.language-selector.language-selector--horizontal & {
+		text-align: right;
+		display: inline-block;
+	}
+	
+	// Dropdown - Item
+	
+	.language-selector.language-selector--dropdown & {
+		padding-right: @language-padding*4;
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal &,
+	.language-selector.language-selector--horizontal .language-selector__item--current &,
+	.language-selector.language-selector--dropdown &,
+	.language-selector.language-selector--dropdown .language-selector__item--current & {
+		.language-selector--light&,
+		.language-selector--dark& {
+			&,
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+// Icon
+
+.language-selector__icon {
+	.language-selector & {
+		margin-right: 0;
+		padding: @language-padding/2 0;
+		min-height: @font-swatch6-line-height;
+		box-sizing: content-box;
+		line-height: @font-swatch6-line-height;
+	}
+	.language-selector.language-selector--flag-text & {
+		margin: 0;
+	}
+	.language-selector.language-selector--dropdown.language-selector--flag-text & {
+		float: left;
+		box-sizing: border-box;
+		line-height: @font-swatch6-line-height;
+	}
+}
+
+// Name
+
+.language-selector__name,
+.language-selector__localised-name {
+    .language-selector & {
+        color: @spare-color;
+    }
+    
+    .language-selector.language-selector--horizontal .language-selector__item--current &,
+    .language-selector.language-selector--horizontal .language-selector__item--current:hover &{
+        color: @button-color;
+    }
+    
+	.language-selector.language-selector--flag-text & {
+		display: inline-block;
+		padding: @language-padding/2 0 @language-padding/2 @language-padding;
+	}
+	.language-selector.language-selector--text &,
+	.language-selector.language-selector--flag & {
+		padding: @language-padding/2 0;
+	}
+	.language-selector.language-selector--text & {
+		display: block;
+	}
+	
+	.language-selector.language-selector--dropdown & {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		
+		.language-selector--flag-text& {
+			@media only screen and (max-width: 380px) {
+				display: none;
+			}
+		}
+	}
+}
 
 // -----------------------------
-// 3.  #NAVIGATION
+// 4.  #NAVIGATION
 // -----------------------------
-
 
 // Widget Extended Navigation
 // --------------------------
 
-
 .widget.extendednavigation {
 	float: right;
 	width: 50%;
+    padding-left: 40px;
+    box-sizing: border-box;
 	@media @tablet {
 		display: block;
 		width: auto;
@@ -97,6 +404,8 @@
 		bottom: 30px;
 		left: 0;
 		right: 0;
+        padding-left: 0;
+        margin: 0 !important;
 	}
 	.extendednavigation {
 		@media @tablet {
@@ -106,12 +415,14 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
+			min-height: 28px;
 		}
 	}
 	ul {
 		margin: 0 auto;
 		display: block;
 		float: none !important;
+		font-size: 0;
 		@media @tablet {
 		    background-color: @bg-color;
             position: absolute;
@@ -146,16 +457,16 @@
 				padding: 10px;
 				transform: translateZ(0);
 				transform: translateY(10%);
-				transition: all 0.5s ease 0s, visibility 0s linear 0.5s; /* the last value is the transition-delay for visibility */
+				transition: all 0.5s ease 0s, visibility 0s linear 0.5s;
 			}
 			&:hover {
 				ul {
 					background-color: @button-color;
-					visibility: visible; /* shows sub-menu */
+					visibility: visible;
 					opacity: 1;
 					padding: 10px;
 					transform: translateX(0%);
-					transition-delay: 0s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+					transition-delay: 0s;
 					li {
 						a {
 							.text {
@@ -176,14 +487,23 @@
 				.text {
 					.transition (all, 0.5s, ease);
 					display: block;
-					padding: 5px 0;
-					margin: 5px 30px;
+					padding: 0;
+					margin: 0 40px 0 30px;
 					text-transform: uppercase;
 
 				}
 				&:after {
-					right: 10px;
-					top: 22px;
+					right: 20px;
+					top: 50%;
+                    margin-top: -2px;
+				}
+				
+				li {
+				    margin-bottom: 10px;
+				    
+				    &:last-child {
+				        margin-bottom: 0;
+				    }
 				}
 			}
 		}
@@ -192,7 +512,6 @@
 
 // Extended Navigation - Home Page
 // -------------------------------
-
 
 .bk-pt-home {
 	.widget.extendednavigation {
@@ -226,7 +545,6 @@
 		}
 	}
 }
-
 
 // Responsive - Extended Navigation
 // --------------------------------
@@ -323,12 +641,9 @@
 	}
 }
 
-
-
 // -----------------------------
-// 4.  #FEATURE
+// 5.  #FEATURE
 // -----------------------------
-
 
 .bk-section {
 	min-height: 100%;
@@ -395,7 +710,7 @@
 					button {
 						background-color: transparent;
 						border: 2px solid @spare-color;
-						border-radius: 33px;
+		                .border-radius(33px);
 						font-size: @font-swatch7-font-size + 6px;
 						padding: 14px 40px;
 						text-decoration: none;
@@ -418,10 +733,8 @@
 	}
 }
 
-
 // Feature Button Alignments
 // -------------------------
-
 
 .widget.feature button.btn.justifyleft {
 	text-align: left;
@@ -454,7 +767,6 @@
 // Feature Layouts
 // ---------------
 
-
 /* LEFT ALIGN */
 
 .widget.feature.align-left .content {
@@ -481,12 +793,6 @@
 
 @media only screen and (max-height: 800px), @tablet {
 	.widget.feature {
-		/* .feature-bgimg {
-			height: 85% !important;
-			height: 85vh !important;
-			.content {
-			}
-		} */
 		h2 {
 			font-size: bkscale(@font-swatch8-font-size,0.6);
 			line-height: bkscale(@font-swatch8-line-height,0.6);
@@ -539,13 +845,9 @@
 	}
 }
 
-
-
-
 // -----------------------------
-// 5. #IMAGE WIDGET
+// 6. #IMAGE WIDGET
 // -----------------------------
-
 
 .widget.image span.image-title {
 	margin: 10px 0 5px;
@@ -568,13 +870,9 @@
 	text-decoration: none;
 }
 
-
-
-
 // -----------------------------
-// 6.  #GALLERY
+// 7.  #GALLERY
 // -----------------------------
-
 
 .widget.gallery {
 	margin-bottom: 2em;
@@ -650,13 +948,9 @@
 	}
 }
 
-
-
-
 // -----------------------------
-// 7.  #SLIDESHOW
+// 8.  #SLIDESHOW
 // -----------------------------
-
 
 .widget.responsiveslideshow {
 	.slideshow-widget {
@@ -721,7 +1015,7 @@
 		.dot {
 			background-color: transparent;
 			border: 1px solid @contrast-color;
-			border-radius: 50%;
+		    .border-radius(50%);
 			width: 8px;
 			height: 8px;
 			margin: 0 4px;
@@ -734,18 +1028,12 @@
 	}
 }
 
-
-
-
-
 // -----------------------------
-// 8. #BUTTONS
+// 9. #BUTTONS
 // -----------------------------
 
-
-// 8.1 Standard
+// 9.1 Standard
 // ------------
-
 
 .widget.button button, .btn,
 button.btn,
@@ -767,7 +1055,7 @@ button.btn,
 .ecombasket-summary-link {
 	background-color: @font-swatch7-background-color;
 	border: none;
-	border-radius: 40px;
+	.border-radius(40px);
 	color: @font-swatch7-color;
 	font-family: @font-swatch7-font-family;
 	font-size: @font-swatch7-font-size;
@@ -790,10 +1078,8 @@ button.btn,
 	}
 }
 
-
-// 8.2 Tweet
+// 9.2 Tweet
 // ---------
-
 
 .widget.tweet a {
 	padding-left: 58px;
@@ -809,10 +1095,8 @@ button.btn,
 	}
 }
 
-
-// 8.3 Dropbox
+// 9.3 Dropbox
 // -----------
-
 
 .widget.dropbox button {
 	margin: 0;
@@ -826,9 +1110,8 @@ button.btn,
 	}
 }
 
-// 8.4 Click to call
+// 9.4 Click to call
 // -----------------
-
 
 .widget.clicktocall {
 	padding: 8px 0;
@@ -854,7 +1137,7 @@ button.btn,
 		background-position: 20px center;
 		padding: 12px 30px 12px 58px;
 		border: 2px solid @spare-color;
-		border-radius: 40px;
+	    .border-radius(40px);
 		text-transform: uppercase;
 		text-align: center;
 		letter-spacing: .1em;
@@ -876,11 +1159,8 @@ button.btn,
 	}
 }
 
-
-
-// 8.5 Paypal
+// 9.5 Paypal
 // ----------
-
 
 .widget.paypalbuynow .widget.button.paypal {
 	padding-left: 58px;
@@ -899,13 +1179,9 @@ button.btn,
 	padding: 10px 22px 10px 22px;
 }
 
-
-
-
 // -----------------------------
-// 9.  #CONTACT FORM
+// 10.  #CONTACT FORM
 // -----------------------------
-
 
 .widget.contactform {
 	form {
@@ -927,13 +1203,9 @@ button.btn,
 	}
 }
 
-
-
-
 // -------------------------------
-// 10.  #SIGNUP FORM
+// 11.  #SIGNUP FORM
 // -------------------------------
-
 
 .widget.signupform {
 	margin-bottom: 20px;
@@ -955,13 +1227,9 @@ button.btn,
 	}
 }
 
-
-
-
 // -----------------------------
-// 11.  #SOCIAL ICONS
+// 12.  #SOCIAL ICONS
 // -----------------------------
-
 
 .widget.socialicons,
 .widget.profile .bk-profile-socialicons {
@@ -986,7 +1254,6 @@ button.btn,
 		}
 	}
 }
-
 
 // SVG Icons
 // ---------
@@ -1031,8 +1298,6 @@ button.btn,
 	background-image: image('/images/social/socialicons-pinterest.svg');
 }
 
-
-
 // PNG Icons
 // ---------
 
@@ -1076,49 +1341,9 @@ button.btn,
 	background-image: image('/images/social/socialicons-pinterest.png');
 }
 
-
-/*
-
-// BK-NAV & FOOTER SVG Icons
-// -------------------------
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
-	background-image: image('/images/social/socialicons-twitter.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-linkedin a {
-	background-image: image('/images/social/socialicons-linkedin.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-facebook a {
-	background-image: image('/images/social/socialicons-facebook.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-rss a {
-	background-image: image('/images/social/socialicons-rss.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-googleplus a {
-	background-image: image('/images/social/socialicons-googleplus.svg');
-}
-
-.bk-nav .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a,
-.bk-footer .widget.profile .bk-profile-socialicons span.bk-socialicons-youtube a {
-	background-image: image('/images/social/socialicons-youtube.svg');
-}
-
-*/
-
-
 // -----------------------------
-// 12. #TWITER FEED
+// 13.  #TWITER FEED
 // -----------------------------
-
 
 .widget.twitter {
 	margin-bottom: 2em;
@@ -1159,12 +1384,9 @@ button.btn,
 	}
 }
 
-
-
 // -----------------------------
-// 13. #DIVIDER - LINE WIDGET
+// 14.  #DIVIDER - LINE WIDGET
 // -----------------------------
-
 
 .widget.line {
 	padding: 20px 0;
@@ -1175,13 +1397,9 @@ hr.line {
 	margin: 1em 0;
 }
 
-
-
 // -----------------------------
-// 14. #PROFILE
+// 15.  #PROFILE
 // -----------------------------
-
-
 
 .widget.profile {
 	form {
@@ -1191,19 +1409,13 @@ hr.line {
 				width: 100%;
 				height: 40px;
 			}
-			button {
-			}
 		}
 	}
 }
 
-
-
-
 // -----------------------------
-// 15. #MAP
+// 16.  #MAP
 // -----------------------------
-
 
 .widget.map {
 	border: 1px solid @contrast-color;
