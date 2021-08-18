@@ -89,7 +89,7 @@
 		box-sizing: content-box;
 	    margin: 0 0 0 50%;
         width: 50%;
-        @transition(opacity, 0.3s, ease);
+        .transition(opacity, 0.3s, ease);
         
         @media @tablet {
             position: static;
@@ -129,6 +129,7 @@
     	letter-spacing: @font-swatch6-letter-spacing;
     	color: @font-swatch6-color;
     }
+	
     &.language-selector--hide {
         opacity: 0;
     }
@@ -443,8 +444,6 @@
 						.transition (all, 0.5s, ease);
 					}
 				}
-			}
-			.text {
 			}
 			ul {
 				display: block;
@@ -954,8 +953,6 @@
 
 .widget.responsiveslideshow {
 	.slideshow-widget {
-		.slideshow-image-list {
-		}
 		.btn-prev,
 		.btn-next {
 			width: 32px;
@@ -1196,9 +1193,6 @@ button.btn,
 				margin-bottom: .4em;
 				padding: 0;
 			}
-			button {
-			
-			}
 		}
 	}
 }
@@ -1221,8 +1215,6 @@ button.btn,
 		input {
 			height: 40px;
 			width: 100%;
-		}
-		button {
 		}
 	}
 }

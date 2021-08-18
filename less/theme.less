@@ -61,7 +61,6 @@
 
 body {
 	font-smooth: always;
-	font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -73,7 +72,8 @@ a {
 }
 
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6, a, p, ol, ul {
+	word-break: break-word;
 }
 
 h1 {
@@ -143,6 +143,8 @@ blockquote {
 	font-style: italic;
 	color: @button-color;
 	font-size: @font-swatch4-font-size;
+	word-break: break-word;
+	
 	&:before {
 		display: none;
 	}
@@ -319,7 +321,7 @@ select,
 	outline: none;
 	padding: 8px 0;
 	text-indent: 0;
-	.transition (all, 0.5s, ease);
+	.transition(all, 0.5s, ease);
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
