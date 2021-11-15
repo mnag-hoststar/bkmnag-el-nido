@@ -1,45 +1,6 @@
-// --------------------------------------
 // El Nido: LESS > Widgets
-// --------------------------------------
 
-
-// -----------------------------
-// #Table of Contents
-// -----------------------------
-
-
-//  1.   #LOGO
-//  2.   #COMPANY NAME
-//  3.   #LANGUAGE SELECTOR
-//  4.   #NAVIGATION
-//  5.   #FEATURE
-
-//  6.   #IMAGES
-//  7.   #GALLERY
-//  8.   #SLIDESHOW
-
-//  9.   #BUTTONS
-//  9.1  -- #STANDARD
-//  9.2  -- #TWEET
-//  9.3  -- #DROPBOX
-//  9.4  -- #CLICK TO CALL
-//  9.5  -- #PAYPAL
-
-// 10.   #CONTACT FORM
-// 11.   #SIGNUP FORM
-
-// 12.   #SOCIAL ICONS
-// 13.   #TWITTER FEED
-
-// 14.   #DIVIDER (KEYLINE)
-// 15.   #PROFILE
-// 16.   #MAP
-// 17.   #YELP
-
-
-// -----------------------------
-//  1.  #LOGO
-// -----------------------------
+// LOGO
 
 .widget.logo {
 	display: table-cell;
@@ -47,18 +8,18 @@
 	line-height: 0;
 }
 
-// -----------------------------
-//  2.  #COMPANY NAME
-// -----------------------------
+// COMPANY NAME
 
 .widget.companyname {
 	display: table-cell;
 	vertical-align: middle;
 	text-transform: uppercase;
 	padding-left: 10px;
+
 	a {
 		display: inherit;
-		word-wrap: break-word;
+		word-break: break-word;
+
 		@media @mobile {
 			font-size: bkscale(@font-swatch10-font-size,0.9);
 		}
@@ -69,9 +30,7 @@
 	text-decoration: none;
 }
 
-// -----------------------------
-//  3.  #LANGUAGE SELECTOR
-// -----------------------------
+// LANGUAGE SELECTOR
 
 @language-padding: 0.5em;
 
@@ -100,12 +59,14 @@
 
 	&.language-selector--light {
 	    background-color: transparent;
+
         @media @tablet {
 	        background-color: @spare-color;
         }
 	}
 	&.language-selector--dark {
 	    background-color: transparent;
+
         @media @tablet {
 	        background-color: @button-color;
         }
@@ -147,6 +108,7 @@
     .language-selector.language-selector--horizontal & {
 		padding: 10px 65px;
 		height: auto;
+
 		@media @tablet {
 		    padding: 10px 30px;
 		}
@@ -166,10 +128,12 @@
 		padding: 0 60px;
 		min-width: auto;
 	    max-width: ~"calc(100% - 1em)";
+
         @media @tablet {
 	    	max-width: 100%;
 		    padding: 0 20px;
         }
+
 		@media @mobile {
 			width: 100%;
 		}
@@ -385,9 +349,7 @@
 	}
 }
 
-// -----------------------------
-// 4.  #NAVIGATION
-// -----------------------------
+//NAVIGATION
 
 // Widget Extended Navigation
 // --------------------------
@@ -397,6 +359,7 @@
 	width: 50%;
     padding-left: 40px;
     box-sizing: border-box;
+
 	@media @tablet {
 		display: block;
 		width: auto;
@@ -408,6 +371,7 @@
         padding-left: 0;
         margin: 0 !important;
 	}
+
 	.extendednavigation {
 		@media @tablet {
 			display: block;
@@ -419,32 +383,38 @@
 			min-height: 28px;
 		}
 	}
+
 	ul {
 		margin: 0 auto;
 		display: block;
 		float: none !important;
 		font-size: 0;
+
 		@media @tablet {
 		    background-color: @bg-color;
             position: absolute;
             top: 100%;
             padding: 20px 20px 5px !important;
 		}
+
 		li {
 			a {
 				padding: 0;
 				margin: 0 30px;
+
 				span {
 					text-transform: uppercase;
 					padding: 2px 1px 0;
 					border-bottom: 2px solid transparent;
 					.transition (all, 0.5s, ease);
+
 					&:hover {
 						border-bottom: 2px solid @font-swatch6-color;
 						.transition (all, 0.5s, ease);
 					}
 				}
 			}
+
 			ul {
 				display: block;
 				text-align: center;
@@ -458,6 +428,7 @@
 				transform: translateY(10%);
 				transition: all 0.5s ease 0s, visibility 0s linear 0.5s;
 			}
+
 			&:hover {
 				ul {
 					background-color: @button-color;
@@ -466,12 +437,14 @@
 					padding: 10px;
 					transform: translateX(0%);
 					transition-delay: 0s;
+
 					li {
 						a {
 							.text {
 								color: @font-swatch6-background-color;
 								border-bottom: 2px solid transparent;
 								.transition (all, 0.5s, ease);
+
 								&:hover {
 									color: @font-swatch6-background-color;
 									border-bottom: 2px solid @font-swatch6-background-color;
@@ -482,6 +455,7 @@
 					}
 				}
 			}
+
 			&.folder {
 				.text {
 					.transition (all, 0.5s, ease);
@@ -489,8 +463,8 @@
 					padding: 0;
 					margin: 0 40px 0 30px;
 					text-transform: uppercase;
-
 				}
+
 				&:after {
 					right: 20px;
 					top: 50%;
@@ -510,7 +484,6 @@
 }
 
 // Extended Navigation - Home Page
-// -------------------------------
 
 .bk-pt-home {
 	.widget.extendednavigation {
@@ -518,23 +491,27 @@
 			li {
 				a {
 					color: @font-swatch6-background-color;
+
 					span {
 						&:hover {
 							border-bottom: 2px solid @font-swatch6-background-color;
 						}
 					}
 				}
+
 				.text {
 					color: @font-swatch6-background-color;
 					&:hover {
 						color: @font-swatch6-background-color;
 					}
 				}
+
 				&.folder {
 					&:after {
 						border-top-color: @font-swatch6-background-color;
 					}
 				}
+
 				&:hover {
 					ul {
 						background-color: @button-color;
@@ -545,16 +522,15 @@
 	}
 }
 
-// Responsive - Extended Navigation
-// --------------------------------
+// Responsive - Extended Navigation---
 
 @media @tablet {
-
 	.widget .extendednavigation a.pull {
 		display: inline-block;
 		top: 0;
 		right: 30px;
 		height: 100%;
+
 		&:after {
 			top: 50%;
 			left: 0;
@@ -577,31 +553,38 @@
 		width: 100%;
 		padding: 0;
 		text-align: center;
+
 		&:last-child {
 			border-bottom: none;
 		}
+
 		a {
 			padding: 10px 0;
 			color: @font-swatch6-color;
+
 			span {
 				text-transform: uppercase;
 				padding: 10px 0;
 				border-bottom: none !important;
 				.transition (all, 0.5s, ease);
+
 				&:hover {
 					border-bottom: none !important;
 					.transition (all, 0.5s, ease);
 				}
 			}
 		}
+
 		.text {
 			color: @font-swatch6-color !important;
 		}
+
 		&:hover {
 			ul {
 				background-color: lighten(@color-swatch2, 45%) !important;
 			}
 		}
+
 		&.folder {
 			&:after {
 				border-top-color: @font-swatch6-color !important;
@@ -612,6 +595,7 @@
 	.widget .extendednavigation ul li.folder ul li {
 		margin: 0;
 		padding: 10px 0;
+
 		a {
 			padding: 0;
 			color: @button-color;
@@ -640,9 +624,7 @@
 	}
 }
 
-// -----------------------------
-// 5.  #FEATURE
-// -----------------------------
+//FEATURE
 
 .bk-section {
 	min-height: 100%;
@@ -733,7 +715,6 @@
 }
 
 // Feature Button Alignments
-// -------------------------
 
 .widget.feature button.btn.justifyleft {
 	text-align: left;
@@ -764,9 +745,6 @@
 }
 
 // Feature Layouts
-// ---------------
-
-/* LEFT ALIGN */
 
 .widget.feature.align-left .content {
 	width: 100%;
@@ -788,7 +766,6 @@
 }
 
 // Responsive Feature
-// ------------------
 
 @media only screen and (max-height: 800px), @tablet {
 	.widget.feature {
@@ -796,10 +773,12 @@
 			font-size: bkscale(@font-swatch8-font-size,0.6);
 			line-height: bkscale(@font-swatch8-line-height,0.6);
 		}
+
 		h3 {
 			font-size: bkscale(@font-swatch9-font-size,0.6);
 			line-height: bkscale(@font-swatch9-line-height,0.6);
 		}
+
 		.feature-btn button {
 			font-size: bkscale(@font-swatch7-font-size,0.6);
 			line-height: bkscale(@font-swatch7-line-height,0.6);
@@ -821,21 +800,26 @@
 			height: 100% !important;
 			height: 100vh !important;
 			width: 100%;
+
 			.content {
 				left: 0;
 				width: 100%;
+
 				.spare {
 					margin: 10%;
 				}
 			}
 		}
+
 		h2 {
 			font-size: bkscale(@font-swatch8-font-size,0.5);
 			line-height: bkscale(@font-swatch8-line-height,0.5);
 		}
+
 		h3 {
 			padding-bottom: 1em;
 		}
+
 		.feature-btn button {
 			width: 100%;
 			font-size: bkscale(@font-swatch7-font-size,0.7);
@@ -844,13 +828,12 @@
 	}
 }
 
-// -----------------------------
-// 6. #IMAGE WIDGET
-// -----------------------------
+// IMAGE WIDGET
 
 .widget.image span.image-title {
 	margin: 10px 0 5px;
 	color: @heading-color;
+
 	&:hover {
 		color: lighten(@color-swatch4, 20%);
 	}
@@ -860,6 +843,7 @@
 .widget.image span.image-description {
 	margin: 0 0 10px;
 	color: @paragraph-color;
+
 	&:hover {
 		color: lighten(@color-swatch5, 20%);
 	}
@@ -869,36 +853,41 @@
 	text-decoration: none;
 }
 
-// -----------------------------
-// 7.  #GALLERY
-// -----------------------------
+// GALLERY
 
 .widget.gallery {
 	margin-bottom: 2em;
+
 	.gallery-widget {
 		position: relative;
 		width: 100%;
 		padding: 0;
+
 		li {
 			width: 25%;
 			padding-bottom: 25%;
+
 			@media only screen and (max-width: 1020px) {
 				width: 33.3%;
 				padding-bottom: 33.3%;
 			}
+
 			@media @tablet {
 				width: 50%;
 				padding-bottom: 50%;
 			}
+
 			@media @mobile {
 				width: 100% !important;
 				padding-bottom: 100% !important;
 			}
+
 			.inner {
 				left: 10px;
 				right: 10px;
 				top: 10px;
 				bottom: 10px;
+				
 				.title {
 					margin-top: 30%;
 					color: @spare-color;
@@ -906,6 +895,7 @@
 					font-weight: 700;
 					text-transform: uppercase;
 				}
+
 				.description {
 					color: @spare-color;
 					font-size: 13px;
@@ -913,6 +903,7 @@
 			}
 		}
 	}
+
 	.image-data {
 		background: fade(@color-swatch3, 85%);
 		display: block;
@@ -936,6 +927,7 @@
 		text-align: center;
 		padding: 20px;
 	}
+
 	.inner:hover .image-data {
 		-webkit-transform: scale(1);
 		-moz-transform: scale(1);
@@ -947,9 +939,7 @@
 	}
 }
 
-// -----------------------------
-// 8.  #SLIDESHOW
-// -----------------------------
+// SLIDESHOW
 
 .widget.responsiveslideshow {
 	.slideshow-widget {
@@ -958,20 +948,24 @@
 			width: 32px;
 			height: 32px;
 			text-indent: -99999px;
+
 			&:hover {
 				opacity: 0.7;
 			}
 		}
+
 		.btn-prev {
 			left: 10px;
 			background: image('/images/slideshow-arrow-left.svg') no-repeat center left;
 			background-size: contain;
 		}
+
 		.btn-next {
 			right: 10px;
 			background: image('/images/slideshow-arrow-right.svg') no-repeat center left;
 			background-size: contain;
 		}
+
 		.btn-play {
 			width: 64px;
 			height: 64px;
@@ -981,34 +975,42 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-indent: -99999px;
+
 			&:after {
 				display: none;
 			}
 		}
+
 		&:hover .pause {
 			background: image('/images/slideshow-pause.svg') no-repeat center;
 			background-size: cover;
 		}
 	}
+
 	.content-wrapper {
 		background-color: @contrast-color;
 	}
+
 	.title {
 		color: @font-swatch4-color;
 		font-family: @font-swatch4-font-family;
 		text-transform: uppercase;
 		padding: 15px 10px 5px;
+
 		@media @mobile {
 		    padding: 15px 10px 17px;
 		}
 	}
+
 	.description {
 		color: @font-swatch5-color;
 		line-height: @font-swatch5-line-height;
 		padding: 5px 10px 10px;
 	}
+
 	.slideshow-widget-controls {
 		margin: 10px 0;
+
 		.dot {
 			background-color: transparent;
 			border: 1px solid @contrast-color;
@@ -1018,6 +1020,7 @@
 			margin: 0 4px;
 			cursor: pointer;
 		}
+
 		.dot.selected {
 			background-color: @button-color;
 			border: none;
@@ -1025,12 +1028,7 @@
 	}
 }
 
-// -----------------------------
-// 9. #BUTTONS
-// -----------------------------
-
-// 9.1 Standard
-// ------------
+// BUTTONS
 
 .widget.button button, .btn,
 button.btn,
@@ -1063,20 +1061,19 @@ button.btn,
 	text-decoration: none;
 	text-transform: uppercase;
 	.transition (all, 0.5s, ease);
+
 	&:hover {
 		background-color: @font-swatch7-background-color-hover;
 		color: @font-swatch7-color-hover;
 		cursor: pointer;
 		.transition (all, 0.5s, ease);
 	}
+
 	@media @mobile {
 		width: 100%;
 		margin-bottom: 1em;
 	}
 }
-
-// 9.2 Tweet
-// ---------
 
 .widget.tweet a {
 	padding-left: 58px;
@@ -1087,13 +1084,11 @@ button.btn,
 	display: inline-block;
 	text-align: center;
 	-webkit-font-smoothing: antialiased;
+
 	&:hover {
 		background-image: image('/images/social/socialicons-twitter.svg');
 	}
 }
-
-// 9.3 Dropbox
-// -----------
 
 .widget.dropbox button {
 	margin: 0;
@@ -1102,13 +1097,11 @@ button.btn,
 	background-size: 30px;
 	background-repeat: no-repeat;
 	background-position: 20px center;
+
 	&:hover {
 		background-image: image('/images/dropbox-icon.svg');
 	}
 }
-
-// 9.4 Click to call
-// -----------------
 
 .widget.clicktocall {
 	padding: 8px 0;
@@ -1123,9 +1116,11 @@ button.btn,
 	color: @font-swatch5-color;
 	letter-spacing: @font-swatch5-letter-spacing;
 	text-decoration: none;
+
 	&:hover {
 		cursor: pointer;
 	}
+
 	@media @mobile {
 		display: inline-block;
 		background-image: image('/images/call-icon.svg');
@@ -1146,6 +1141,7 @@ button.btn,
 		color: @font-swatch7-color;
 		width: 100%;
 		.transition (all, 0.5s, ease);
+
 		&:hover {
 			background-color: @font-swatch7-background-color-hover;
 			padding: 12px 30px 12px 58px;
@@ -1155,9 +1151,6 @@ button.btn,
 		}
 	}
 }
-
-// 9.5 Paypal
-// ----------
 
 .widget.paypalbuynow .widget.button.paypal {
 	padding-left: 58px;
@@ -1169,16 +1162,12 @@ button.btn,
 	cursor: pointer;
 }
 
-
-
 .ecom-product-go-to-checkout-btn,
 .ecom-product .btn {
 	padding: 10px 22px 10px 22px;
 }
 
-// -----------------------------
-// 10.  #CONTACT FORM
-// -----------------------------
+// CONTACT FORM
 
 .widget.contactform {
 	form {
@@ -1197,12 +1186,11 @@ button.btn,
 	}
 }
 
-// -------------------------------
-// 11.  #SIGNUP FORM
-// -------------------------------
+// SIGNUP FORM
 
 .widget.signupform {
 	margin-bottom: 20px;
+
 	fieldset {
 		label {
 			font-family:@font-swatch5-font-family;
@@ -1212,6 +1200,7 @@ button.btn,
 			color: @font-swatch5-color;
 			letter-spacing: @font-swatch5-letter-spacing;
 		}
+
 		input {
 			height: 40px;
 			width: 100%;
@@ -1219,14 +1208,13 @@ button.btn,
 	}
 }
 
-// -----------------------------
-// 12.  #SOCIAL ICONS
-// -----------------------------
+// SOCIAL ICONS
 
 .widget.socialicons,
 .widget.profile .bk-profile-socialicons {
 	span {
 		display: inline-block;
+
 		a {
 			background-size: 32px;
 			background-color: @font-swatch7-background-color;
@@ -1236,10 +1224,12 @@ button.btn,
 			height: 36px;
 			.border-radius(50%);
 			.transition (all, 0.5s, ease);
+
 			&:hover {
 				background-color: @font-swatch7-background-color-hover;
 				.transition (all, 0.5s, ease);
 			}
+
 			@media @mobile {
 				margin: 0 2px;
 			}
@@ -1248,7 +1238,6 @@ button.btn,
 }
 
 // SVG Icons
-// ---------
 
 .svg .widget.socialicons span.bk-socialicons-twitter a,
 .svg .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
@@ -1291,7 +1280,6 @@ button.btn,
 }
 
 // PNG Icons
-// ---------
 
 .widget.socialicons span.bk-socialicons-twitter a,
 .widget.profile .bk-profile-socialicons span.bk-socialicons-twitter a {
@@ -1333,12 +1321,11 @@ button.btn,
 	background-image: image('/images/social/socialicons-pinterest.png');
 }
 
-// -----------------------------
-// 13.  #TWITER FEED
-// -----------------------------
+// TWITER FEED
 
 .widget.twitter {
 	margin-bottom: 2em;
+
 	ul {
 		li {
 			padding: 30px;
@@ -1346,12 +1333,15 @@ button.btn,
 			border: 1px solid @contrast-color;
 		}
 	}
+
 	.twitter-profile-pic {
 		max-width: 80px;
+
 		@media @mobile {
 			display: none;
 		}
 	}
+
 	.twitter-content {
 		p {
 			padding: 0;
@@ -1359,16 +1349,19 @@ button.btn,
 				font-size: @font-swatch5-font-size;
 			}
 		}
+
 		time, span, span a {
 			font-family: @font-swatch5-font-family;
 			font-size: bkscale(@font-swatch5-font-size,0.9);
 		}
+
 		span.bk-full-name {
 			font-family: @font-swatch4-font-family;
 			color: @font-swatch4-color;
 			font-size: @font-swatch5-font-size;
 			text-transform: uppercase;
 		}
+
 		span a {
 			color: @color-swatch3;
 			text-decoration: none;
@@ -1376,9 +1369,7 @@ button.btn,
 	}
 }
 
-// -----------------------------
-// 14.  #DIVIDER - LINE WIDGET
-// -----------------------------
+// DIVIDER - LINE WIDGET
 
 .widget.line {
 	padding: 20px 0;
@@ -1389,13 +1380,12 @@ hr.line {
 	margin: 1em 0;
 }
 
-// -----------------------------
-// 15.  #PROFILE
-// -----------------------------
+// PROFILE
 
 .widget.profile {
 	form {
 		margin: 0;
+
 		fieldset {
 			input {
 				width: 100%;
@@ -1405,9 +1395,7 @@ hr.line {
 	}
 }
 
-// -----------------------------
-// 16.  #MAP
-// -----------------------------
+// MAP
 
 .widget.map {
 	border: 1px solid @contrast-color;
