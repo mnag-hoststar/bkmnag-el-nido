@@ -186,10 +186,25 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 				}
 			}
 		}
+		
+        form fieldset input {
+            width: 100%;
+        }
+
+        form fieldset button {
+            word-break: break-word;
+            height: auto;
+            width: auto;
+
+			@media @mobile {
+				width: 100%;
+			}
+        }
 	}
 }
 
-.footerright, .footerleft {
+.footerright,
+.footerleft {
 	display: inline-block;
 	vertical-align: middle;
 	width: 49.5%;
@@ -292,7 +307,7 @@ textarea {
 
 label,
 .advancedcontactform label {
-	display: inline-block!important;
+	display: block;
 	font-family: @font-swatch5-font-family;
 	font-size: @font-swatch5-font-size;
 	font-weight: @font-swatch5-font-weight;
