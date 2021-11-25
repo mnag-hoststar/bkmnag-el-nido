@@ -1,18 +1,16 @@
-// BaseKit Standard Theme: LESS > Theme
-
-// Table of Contents
-
-// TYPOGRAPHY
+// Theme
 
 // Colour Variables
 
-@bg-color: @color-swatch1;          // Background
-@contrast-color: @color-swatch2;    // Contrast Colour
-@button-color: @color-swatch3;      // Button BG Colour
-@heading-color: @color-swatch4;     // Heading Text Colour (H1 - H4)
-@paragraph-color: @color-swatch5;   // Paragraph Text Colour
-@nav-color: @color-swatch6;         // Nav Link Colour
-@spare-color: @color-swatch7;       // Spare Colour
+@bg-color: @color-swatch1;
+@contrast-color: @color-swatch2;
+@button-color: @color-swatch3;
+@heading-color: @color-swatch4;
+@paragraph-color: @color-swatch5;
+@nav-color: @color-swatch6;
+@spare-color: @color-swatch7;
+
+// Typography
 
 body {
 	font-smooth: always;
@@ -36,6 +34,7 @@ h1 {
 		font-size: bkscale(@font-swatch1-font-size,0.85);
 		line-height: bkscale(@font-swatch1-line-height,0.85);
 	}
+
 	@media @mobile {
 		font-size: bkscale(@font-swatch1-font-size,0.7);
 		line-height: bkscale(@font-swatch1-line-height,0.7);
@@ -47,6 +46,7 @@ h2 {
 		font-size: bkscale(@font-swatch2-font-size,0.85);
 		line-height: bkscale(@font-swatch2-line-height,0.85);
 	}
+
 	@media @mobile {
 		font-size: bkscale(@font-swatch2-font-size,0.7);
 		line-height: bkscale(@font-swatch2-line-height,0.7);
@@ -58,6 +58,7 @@ h3 {
 		font-size: bkscale(@font-swatch3-font-size,0.85);
 		line-height: bkscale(@font-swatch3-line-height,0.85);
 	}
+
 	@media @mobile {
 		font-size: bkscale(@font-swatch3-font-size,0.7);
 		line-height: bkscale(@font-swatch3-line-height,0.7);
@@ -69,6 +70,7 @@ h4 {
 		font-size: bkscale(@font-swatch4-font-size,0.85);
 		line-height: bkscale(@font-swatch4-line-height,0.85);
 	}
+
 	@media @mobile {
 		font-size: bkscale(@font-swatch4-font-size,0.7);
 		line-height: bkscale(@font-swatch4-line-height,0.7);
@@ -82,10 +84,12 @@ h5 {
 	line-height: @font-swatch5-line-height;
 	color: @font-swatch4-color;
 	letter-spacing: @font-swatch4-letter-spacing;
+
 	@media @tablet {
 		font-size: bkscale(@font-swatch5-font-size,0.85);
 		line-height: bkscale(@font-swatch5-line-height,0.85);
 	}
+
 	@media @mobile {
 		font-size: bkscale(@font-swatch5-font-size,0.7);
 		line-height: bkscale(@font-swatch5-line-height,0.7);
@@ -139,6 +143,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 		vertical-align: middle;
 		padding-right: 30px;
 		width: 50%;
+
 		@media @tablet {
 			display: block;
 			width: 80%;
@@ -152,8 +157,10 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	.bk-header {
 		position: relative;
 	}
+
 	.main {
 		padding: 60px 0;
+
 		@media @tablet {
 			padding: 40px 0;
 		}
@@ -166,11 +173,14 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	background-color: @spare-color;
 	color: lighten(@paragraph-color, 20%);
 	padding: 2em 0;
+
 	.widget.profile {
 		.bk-profile-socialicons {
 			margin: 0;
+
 			span a {
 				background-color: @contrast-color;
+
 				&:hover {
 					background-color: @button-color;
 				}
@@ -183,6 +193,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	display: inline-block;
 	vertical-align: middle;
 	width: 49.5%;
+
 	@media @mobile {
 		width: 100%;
 		text-align: center !important;
@@ -258,10 +269,12 @@ select,
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
+
 	&:hover {
 		.transition (all, 0.5s, ease);
 		border-bottom: 1px solid darken(@contrast-color, 10%);
 	}
+
 	&:focus {
 		.transition (all, 0.5s, ease);
 		border-bottom: 1px solid @button-color;
@@ -303,6 +316,7 @@ select {
 .advancedcontactform__form-group,
 .contactform .form-group {
 	margin-bottom: 1em;
+
 	&:last-child {
 		margin-bottom: 0;
 	}
@@ -394,25 +408,31 @@ select {
 .basket-summary-items-table {
 	border-collapse: collapse;
 	width: 100%;
+
 	.image-wrap {
 		background-position: 10000px;
 		line-height: 0;
 		text-align: center;
 		padding: 30px;
+
 		img {
 			max-width: 100%;
 			max-height: 200px;
 		}
 	}
+
 	td {
 		padding: 10px 0;
 	}
+
 	tr {
 		border-bottom: solid 1px darken(@color-swatch1, 10%);
+
 		&:last-of-type {
 			border-bottom: none;
 		}
 	}
+
 	.basket-summary-subtotal {
 		padding: 20px;
 	}

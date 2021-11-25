@@ -1,4 +1,4 @@
-// El Nido: LESS > Widgets
+// Widgets
 
 // LOGO
 
@@ -64,6 +64,7 @@
 	        background-color: @spare-color;
         }
 	}
+
 	&.language-selector--dark {
 	    background-color: transparent;
 
@@ -184,6 +185,7 @@
         	    background-color: @spare-color;
 			}
 		}
+
 		.language-selector--light& {
 			&--current, &--current:hover {
         	    @media @tablet {
@@ -193,6 +195,7 @@
 			}
 		}
 	}
+
 	.language-selector.language-selector--dropdown & {
 	    .border-radius(0);
 	    
@@ -300,9 +303,11 @@
 		box-sizing: content-box;
 		line-height: @font-swatch6-line-height;
 	}
+
 	.language-selector.language-selector--flag-text & {
 		margin: 0;
 	}
+
 	.language-selector.language-selector--dropdown.language-selector--flag-text & {
 		float: left;
 		box-sizing: border-box;
@@ -327,10 +332,12 @@
 		display: inline-block;
 		padding: @language-padding/2 0 @language-padding/2 @language-padding;
 	}
+
 	.language-selector.language-selector--text &,
 	.language-selector.language-selector--flag & {
 		padding: @language-padding/2 0;
 	}
+	
 	.language-selector.language-selector--text & {
 		display: block;
 	}
@@ -352,7 +359,6 @@
 //NAVIGATION
 
 // Widget Extended Navigation
-// --------------------------
 
 .widget.extendednavigation {
 	float: right;
@@ -418,7 +424,7 @@
 			ul {
 				display: block;
 				text-align: center;
-				visibility: hidden; /* hides sub-menu */
+				visibility: hidden;
 				opacity: 0;
 				position: absolute;
 				top: 100%;
@@ -522,7 +528,7 @@
 	}
 }
 
-// Responsive - Extended Navigation---
+// Extended Navigation
 
 @media @tablet {
 	.widget .extendednavigation a.pull {
@@ -751,14 +757,14 @@
 	text-align: left;
 }
 
-/* CENTER ALIGN */
+// CENTER ALIGN
 
 .widget.feature.align-center .content {
 	width: 100%;
 	text-align: center;
 }
 
-/* RIGHT ALIGN */
+// RIGHT ALIGN
 
 .widget.feature.align-right .content {
 	width: 100%;
