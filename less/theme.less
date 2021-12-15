@@ -22,11 +22,54 @@ body {
 
 a {
 	cursor: pointer;
-}
 
+	.style--light & {
+	  	color: @color--accent;
+	}
+
+	.style--accent & {
+	  	color: @contrast--accent;
+	}
+
+	.style--dark & {
+	  	color: @contrast--dark;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
 
 h1, h2, h3, h4, h5, h6, a, p, ol, ul {
 	word-break: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	.style--light & {
+	  	color: @contrast--light;
+	}
+
+	.style--accent & {
+	  	color: @contrast--accent;
+	}
+
+	.style--dark & {
+	  	color: @contrast--dark;
+	}
+}
+
+p, li {
+	.style--light & {
+	  	color: lighten(@contrast--light, 15%);
+	}
+
+	.style--accent & {
+	  	color: lighten(@contrast--accent, 15%);
+	}
+
+	.style--dark & {
+	  	color: lighten(@contrast--dark, 15%);
+	}
 }
 
 h1 {
@@ -103,7 +146,22 @@ blockquote {
 	color: @button-color;
 	font-size: @font-swatch4-font-size;
 	word-break: break-word;
-	
+
+	.style--light & {
+		border-color: darken(@color--light, 12%);
+		color: @color--accent;
+	}
+
+	.style--accent & {
+		border-color: darken(@color--accent, 12%);
+		color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: lighten(@color--dark, 10%);
+		color: @contrast--dark;
+	}
+
 	&:before {
 		display: none;
 	}
@@ -122,7 +180,7 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 // HEADER & #BK-NAV
 
 .bk-header {
-	margin: 40px;
+	padding: 40px;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -132,7 +190,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 	@media @tablet {
 		background-color: @bg-color;
 		display: inline-block;
-    	margin: 0;
 	    padding: 10px 30px;
 		position: relative;
 		width: 100%;
@@ -247,7 +304,6 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 .widget.content {
 	padding: 0;
-	overflow: hidden;
 }
 
 .widget.content span.expand {
@@ -285,15 +341,60 @@ select,
 	-moz-appearance: none;
 	-webkit-appearance: none;
 
+	.style--light & {
+		background-color: @color--light;
+		border-color: darken(@color--light, 12%);
+	  	color: lighten(@contrast--light, 15%);
+	}
+
+	.style--accent & {
+		background-color: @color--accent;
+		border-color: darken(@color--accent, 12%);
+	  	color: lighten(@contrast--accent, 15%);
+	}
+
+	.style--dark & {
+		background-color: @color--dark;
+		border-color: lighten(@color--dark, 10%);
+	  	color: lighten(@contrast--dark, 15%);
+	}
+
 	&:hover {
 		.transition (all, 0.5s, ease);
 		border-bottom: 1px solid darken(@contrast-color, 10%);
+
+		.style--light & {
+			border-color: darken(@color--light, 22%);
+		}
+
+		.style--accent & {
+			border-color: darken(@color--accent, 22%);
+		}
+
+		.style--dark & {
+			border-color: lighten(@color--dark, 20%);
+		}
 	}
 
 	&:focus {
 		.transition (all, 0.5s, ease);
 		border-bottom: 1px solid @button-color;
 		box-shadow: 0 1px 0 0 @button-color;
+
+		.style--light & {
+			border-color: @color--accent;
+			box-shadow: 0 1px 0 0 @color--accent;
+		}
+
+		.style--accent & {
+			border-color: @contrast--accent;
+			box-shadow: 0 1px 0 0 @contrast--accent;
+		}
+
+		.style--dark & {
+			border-color: @contrast--dark;
+			box-shadow: 0 1px 0 0 @contrast--dark;
+		}
 	}
 }
 
@@ -307,6 +408,7 @@ textarea {
 }
 
 label,
+.contactform label,
 .advancedcontactform label {
 	display: block;
 	font-family: @font-swatch5-font-family;
@@ -317,14 +419,79 @@ label,
 	letter-spacing: @font-swatch5-letter-spacing;
 	margin-bottom: 1em;
 	padding: 0;
+
+	.style--light & {
+	  	color: lighten(@contrast--light, 15%);
+	}
+
+	.style--accent & {
+	  	color: lighten(@contrast--accent, 15%);
+	}
+
+	.style--dark & {
+	  	color: lighten(@contrast--dark, 15%);
+	}
 }
 
 select {
 	cursor: pointer;
 	position: relative;
 	border-radius: 0;
-	background: image('/images/arrow-small-down.svg') no-repeat 98% center;
+	background: image('/images/arrow-small-down.svg') no-repeat ~"calc(100% - 12px)" center;
 	background-size: 24px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+	.style--light & {
+		color: lighten(@contrast--light, 15%);
+	}
+
+	.style--accent & {
+		color: lighten(@contrast--accent, 15%);
+	}
+
+	.style--dark & {
+		color: lighten(@contrast--dark, 15%);
+	}
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	.style--light & {
+		color: lighten(@contrast--light, 15%);
+	}
+
+	.style--accent & {
+		color: lighten(@contrast--accent, 15%);
+	}
+
+	.style--dark & {
+		color: lighten(@contrast--dark, 15%);
+	}
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	.style--light & {
+		color: lighten(@contrast--light, 15%);
+	}
+
+	.style--accent & {
+		color: lighten(@contrast--accent, 15%);
+	}
+
+	.style--dark & {
+		color: lighten(@contrast--dark, 15%);
+	}
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	.style--light & {
+		color: lighten(@contrast--light, 15%);
+	}
+
+	.style--accent & {
+		color: lighten(@contrast--accent, 15%);
+	}
+
+	.style--dark & {
+		color: lighten(@contrast--dark, 15%);
+	}
 }
 
 // ADVANCED CONTACT FORM
@@ -364,10 +531,40 @@ select {
 			left: -40px;
 			top: 0;
 			.transition(all, 0.3s, ease);
+
+			.style--light & {
+				background: @color--light;
+				border-color: darken(@color--light, 12%);
+			}
+
+			.style--accent & {
+				background: @color--accent;
+				border-color: darken(@color--accent, 12%);
+			}
+
+			.style--dark & {
+				background: @color--dark;
+				border-color: lighten(@color--dark, 10%);
+			}
 		}
 
 		&:hover:before {
 			border: 1px solid darken(@contrast-color, 15%);
+
+			.style--light & {
+				background: @color--light;
+				border-color: darken(@color--light, 22%);
+			}
+
+			.style--accent & {
+				background: @color--accent;
+				border-color: darken(@color--accent, 22%);
+			}
+
+			.style--dark & {
+				background: @color--dark;
+				border-color: lighten(@color--dark, 20%);
+			}
 		}
 
 		&:after {
@@ -381,6 +578,21 @@ select {
 			left: -40px;
 			top: 0px;
 			.transition(all, 0.3s, ease);
+
+			.style--light & {
+				background-color: @color--light;
+				border-color: @color--accent;
+			}
+
+			.style--accent & {
+				background-color: @color--light;
+				border-color: @contrast--accent;
+			}
+
+			.style--dark & {
+				background-color: @color--light;
+				border-color: @contrast--dark;
+			}
 		}
 	}
 
@@ -397,11 +609,9 @@ select {
 
 .option-item.option-item--checkbox,
 .widget .form [class*="form-group--terms"] {
-	label {
-		&:after {
-			background: image('/images/hs-icon_check-l.svg') no-repeat center;
-			background-size: 25px;
-		}
+	label:after {
+		background: image('/images/hs-icon_check-l.svg') no-repeat center;
+		background-size: 25px;
 	}
 }
 

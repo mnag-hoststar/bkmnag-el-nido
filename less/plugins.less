@@ -19,8 +19,32 @@
 			padding-bottom: 2em;
 			text-decoration: none;
 
+			.style--light & {
+			  	color: @contrast--light;
+			}
+
+			.style--accent & {
+			  	color: @contrast--accent;
+			}
+
+			.style--dark & {
+			  	color: @contrast--dark;
+			}
+
 			&:hover {
 				color: @button-color;
+
+				.style--light & {
+				  	color: @color--accent;
+				}
+
+				.style--accent & {
+				  	color: @contrast--accent;
+				}
+
+				.style--dark & {
+				  	color: @contrast--dark;
+				}
 			}
 		}
 
@@ -34,6 +58,18 @@
 			color: @font-swatch5-color;
 			float: right;
 			text-decoration: none;
+
+			.style--light & {
+			  	color: lighten(@contrast--light, 15%);
+			}
+
+			.style--accent & {
+			  	color: lighten(@contrast--accent, 15%);
+			}
+
+			.style--dark & {
+			  	color: lighten(@contrast--dark, 15%);
+			}
 		}
 	}
 }
