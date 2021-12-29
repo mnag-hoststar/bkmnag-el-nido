@@ -40,6 +40,8 @@ a {
 	}
 }
 
+// Typography
+
 h1, h2, h3, h4, h5, h6, a, p, ol, ul {
 	word-break: break-word;
 }
@@ -55,20 +57,6 @@ h1, h2, h3, h4, h5, h6 {
 
 	.style--dark & {
 	  	color: @contrast--dark;
-	}
-}
-
-p, li {
-	.style--light & {
-	  	color: lighten(@contrast--light, 15%);
-	}
-
-	.style--accent & {
-	  	color: lighten(@contrast--accent, 15%);
-	}
-
-	.style--dark & {
-	  	color: lighten(@contrast--dark, 15%);
 	}
 }
 
@@ -139,6 +127,90 @@ h5 {
 	}
 }
 
+// Normal Text
+
+p, li {
+	.style--light & {
+	  	color: lighten(@contrast--light, 15%);
+	}
+
+	.style--accent & {
+	  	color: lighten(@contrast--accent, 15%);
+	}
+
+	.style--dark & {
+	  	color: lighten(@contrast--dark, 15%);
+	}
+}
+
+.content .bk-content-text ol {
+	list-style-position: inherit;
+}
+
+.widget {
+	p, span, small, pre, code,
+	table, th, td,
+	&.content {
+		color: @font-swatch5-color;
+	
+		.style--light & {
+			color: @contrast--light;
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
+		}
+	}
+}
+
+// Preformatted and Code Text
+
+pre, code {
+	display: block;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+	border: none;
+	.border-radius(0);
+	background-color: darken(@color-swatch1, 10%);
+	overflow: auto;
+	.paragraph;
+	font-family: monospace;
+
+	.style--light & {
+		background-color: darken(@color--light, 10%);
+	}
+
+	.style--accent & {
+		background-color: lighten(@color--accent, 10%);
+	}
+
+	.style--dark & {
+		background-color: lighten(@color--dark, 10%);
+	}
+}
+
+code {
+	border-left: 1px solid @color-swatch5;
+
+	.style--light & {
+		border-color: @color--accent;
+	}
+
+	.style--accent & {
+		border-color: @contrast--accent;
+	}
+
+	.style--dark & {
+		border-color: @color--accent;
+	}
+}
+
+// Blockquote
+
 blockquote {
 	border: 1px solid @contrast-color;
 	padding: 30px;
@@ -167,8 +239,6 @@ blockquote {
 	}
 }
 
-.content .bk-content-text ol {
-	list-style-position: inherit;
 }
 
 // CUSTOM PAGE
