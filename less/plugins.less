@@ -209,15 +209,19 @@
 
 // Products List
 
-.widget.ecomproductslist {
+.widget.ecomproductslist,
+.widget.ecomfeaturedproducts {
 	width: auto;
 	max-width: none;
 	margin-left: 0;
+}
 
-	.ecom-productslist-products {
-		margin-left: 0;
-		max-width: none;
-	}
+.widget.ecomproductslist .ecom-productslist-products,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap {
+	margin-left: 0;
+	max-width: none;
+
+	// Filter
 
 	.productlist-filter {
 	    margin-right: 0;
@@ -281,66 +285,76 @@
 				}
 			}
 		}
-
-		.productlist-item-count {
-			padding-top: 10px;
-		}
-	}
-
-	.ecom-productslist-image-wrap {
-		background-position: center;
-	}
-
-	.ecom-productslist-product {
-		display: inline-block;
-		width: 30%;
-		margin-right: 3%;
-		margin-left: 0;
-		margin-bottom: 2em;
-		padding: 0;
-		vertical-align: top;
-		overflow: visible;
-
-		@media @tablet {
-			width: 45%;
-			margin-right: 4%;
-		}
-
-		@media @mobile {
-			width: 97%;
-			margin-right: 0;
-		}
-		
-		.responsivecolumns & {
-			width: 97%;
-			margin-right: 0;
-		}
-	}
-
-	span.ecom-productlist-price {
-		border: 1px solid @contrast-color;
-		padding: 3px 10px 4px;
-	}
-
-	.ecom-productlist-info {
-		margin-top: 20px;
-		text-align: center;
-	}
-
-	.productlist-pagination {
-		margin-left: 0;
-		margin-right: 3%;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		text-align: center;
-
-		.productlist-pagination-pages .productlist-pagination-page {
-			padding: 0 10px;
-		}
 	}
 }
 
-// Product Detail
+.widget.ecomproductslist .productlist-item-count {
+	padding-top: 10px;
+}
+
+.widget.ecomproductslist .ecom-productslist-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-product {
+	display: inline-block;
+	width: 30%;
+	margin-right: 3%;
+	margin-left: 0;
+	margin-bottom: 2em;
+	padding: 0;
+	vertical-align: top;
+	overflow: visible;
+
+	@media @tablet {
+		width: 45%;
+		margin-right: 4%;
+	}
+
+	@media @mobile {
+		width: 97%;
+		margin-right: 0;
+	}
+	
+	.responsivecolumns & {
+		width: 97%;
+		margin-right: 0;
+	}
+}
+
+// Image
+
+.widget.ecomproductslist .ecom-productslist-image-wrap,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap {
+	background-position: center;
+}
+
+// Price
+
+.widget.ecomproductslist .ecom-productlist-price,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-price {
+	border: 1px solid @contrast-color;
+	padding: 3px 10px 4px;
+}
+
+// Info
+
+.widget.ecomproductslist .ecom-productlist-info,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-info {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.widget.ecomproductslist .productlist-pagination {
+	margin-left: 0;
+	margin-right: 3%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+
+	.productlist-pagination-pages .productlist-pagination-page {
+		padding: 0 10px;
+	}
+}
+
+// Single Product
 
 .widget.ecomproduct {
 	margin-bottom: 3em;
@@ -441,35 +455,6 @@
 	}
 }
 
-@media @mobile {
-	.basket-summary-items-table {
-		td, th {
-			float: left;
-			width: 100%;
-			padding: 3px 0;
-		}
-
-		.image-wrap {
-			padding: 10px;
-		}
-
-		.basket-summary-amount, 
-		.basket-summary-subtotal {
-			padding: 10px 0;
-			text-align: right;
-		}
-
-		.basket-summary-items-column {
-			text-align: left;
-		}
-
-		.basket-summary-amount-column,
-		.basket-summary-details-column {
-			display: none;
-		}
-	}
-}
-
 // Basket
 
 .widget.ecombasket {
@@ -524,6 +509,44 @@
 	height: 20px;
 	position: relative;
 	top: 4px;
+}
+
+.basket-summary-items-table {
+		td, th {
+			@media @mobile {
+				float: left;
+				width: 100%;
+				padding: 3px 0;
+			}
+		}
+
+		.image-wrap {
+			@media @mobile {
+				padding: 10px;
+			}
+		}
+
+		.basket-summary-amount, 
+		.basket-summary-subtotal {
+			@media @mobile {
+				padding: 10px 0;
+				text-align: right;
+			}
+		}
+
+		.basket-summary-items-column {
+			@media @mobile {
+				text-align: left;
+			}
+		}
+
+		.basket-summary-amount-column,
+		.basket-summary-details-column {
+			@media @mobile {
+				display: none;
+			}
+		}
+	}
 }
 
 .basket-summary-empty-cta,
