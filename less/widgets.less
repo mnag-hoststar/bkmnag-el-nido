@@ -1296,6 +1296,22 @@ button.btn,
 	padding: 10px 22px 10px 22px;
 }
 
+.widget button.btn span {
+	color: @font-swatch7-color;
+
+	.style--light & {
+		color: @contrast--accent;
+	}
+
+	.style--accent & {
+		color: @contrast--dark;
+	}
+
+	.style--dark & {
+		color: @contrast--accent;
+	} 
+}
+
 // CONTACT FORM
 
 .widget.contactform {
