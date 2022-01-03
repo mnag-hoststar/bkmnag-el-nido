@@ -661,20 +661,21 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 .widget.content {
 	padding: 0;
-}
 
-.widget.content span.expand {
-	font-family: @font-swatch7-font-family;
-	margin: 10px 0;
-	cursor: pointer;
-	display: inline-block;
-	letter-spacing: .1em;
-	text-transform: uppercase;
-}
-
-.expand .more, .expand .less {
-	&:hover {
-		color: @heading-color;
+	span.expand {
+		font-family: @font-swatch7-font-family;
+		margin: 10px 0;
+		cursor: pointer;
+		display: inline-block;
+		letter-spacing: .1em;
+		text-transform: uppercase;
+	}
+	
+	.expand .more,
+	.expand .less {
+		&:hover {
+			color: @heading-color;
+		}
 	}
 }
 
@@ -798,7 +799,7 @@ select {
 	background-size: 24px;
 }
 
-::-webkit-input-placeholder { /* WebKit browsers */
+::-webkit-input-placeholder {
 	.style--light & {
 		color: lighten(@contrast--light, 15%);
 	}
@@ -811,7 +812,7 @@ select {
 		color: lighten(@contrast--dark, 15%);
 	}
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+:-moz-placeholder {
 	.style--light & {
 		color: lighten(@contrast--light, 15%);
 	}
@@ -824,7 +825,7 @@ select {
 		color: lighten(@contrast--dark, 15%);
 	}
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
+::-moz-placeholder {
 	.style--light & {
 		color: lighten(@contrast--light, 15%);
 	}
@@ -837,7 +838,7 @@ select {
 		color: lighten(@contrast--dark, 15%);
 	}
 }
-:-ms-input-placeholder { /* Internet Explorer 10+ */
+:-ms-input-placeholder {
 	.style--light & {
 		color: lighten(@contrast--light, 15%);
 	}
