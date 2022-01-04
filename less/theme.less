@@ -684,9 +684,19 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 input,
 textarea,
 select,
+.contactform input,
+.contactform textarea,
+.signupform fieldset input,
+.signupform fieldset input.email,
+.advancedcontactform input,
+.advancedcontactform textarea,
 .widget.profile form fieldset input,
-.advancedcontactform input, 
-.advancedcontactform textarea {
+.blogsearch input.blog-search-input,
+.productlist-filter .productlist-search input,
+.widget input[type="text"],
+.widget input[type="email"],
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
 	background: @bg-color;
 	border: none;
 	border-bottom: 1px solid @contrast-color;
