@@ -690,6 +690,7 @@ select,
 .signupform fieldset input.email,
 .advancedcontactform input,
 .advancedcontactform textarea,
+.userregistration fieldset input,
 .widget.profile form fieldset input,
 .blogsearch input.blog-search-input,
 .productlist-filter .productlist-search input,
@@ -993,6 +994,42 @@ select {
 			background: image('/images/radio.svg') no-repeat center;
 			background-size: 17px;
 			.border-radius(20px);
+		}
+	}
+}
+
+// Registration Form
+
+.widget.userregistration {
+	fieldset {
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		max-width: 400px;
+		
+		@media @mobile {
+			max-width: none;
+		}
+
+		.responsivecolumns & {
+			max-width: none;
+		}
+
+		input {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.error {
+			padding: 20px 0 0;
+
+			&[style*="display: block"] {
+				padding: 20px 0;
+			}
+
+			&[style*="display: none"] {
+				display: block !important;
+			}
 		}
 	}
 }

@@ -1095,6 +1095,7 @@ button.btn,
 .advancedcontactform button,
 .advancedcontactform__button,
 .advancedcontactform button.btn,
+.userregistration fieldset .userregistrationbtn,
 .widget.profile fieldset button.btn,
 .widget.profile form button,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1209,90 +1210,90 @@ a.contentgroup__link {
 
 .widget.clicktocall {
 	padding: 8px 0;
-}
 
-.widget.clicktocall a {
-	padding: 10px 0;
-	font-family: @font-swatch5-font-family;
-	font-size: @font-swatch5-font-size;
-	font-weight: @font-swatch5-font-weight;
-	line-height: @font-swatch5-line-height;
-	color: @font-swatch5-color;
-	letter-spacing: @font-swatch5-letter-spacing;
-	text-decoration: none;
-
-	.style--light & {
-	  	color: lighten(@contrast--light, 15%);
-	}
-
-	.style--accent & {
-	  	color: lighten(@contrast--accent, 15%);
-	}
-
-	.style--dark & {
-	  	color: lighten(@contrast--dark, 15%);
-	}
-
-	&:hover {
-		cursor: pointer;
-	}
-
-	@media @mobile {
-		display: inline-block;
-		background-image: image('/images/call-icon.svg');
-		background-size: 30px;
-		background-repeat: no-repeat;
-		background-position: 20px center;
-		padding: 12px 30px 12px 58px;
-		border: 2px solid @spare-color;
-	    .border-radius(40px);
-		text-transform: uppercase;
-		text-align: center;
-		letter-spacing: .1em;
-		font-family: @font-swatch7-font-family;
-		font-size: @font-swatch7-font-size;
-		font-weight: @font-swatch7-font-weight;
-		line-height: @font-swatch7-line-height;
-		background-color: @font-swatch7-background-color;
-		color: @font-swatch7-color;
-		width: 100%;
-		.transition (all, 0.5s, ease);
-
+	a {
+		padding: 10px 0;
+		font-family: @font-swatch5-font-family;
+		font-size: @font-swatch5-font-size;
+		font-weight: @font-swatch5-font-weight;
+		line-height: @font-swatch5-line-height;
+		color: @font-swatch5-color;
+		letter-spacing: @font-swatch5-letter-spacing;
+		text-decoration: none;
+	
 		.style--light & {
-			background: @color--accent;
-			border-color: transparent;
-		  	color: @contrast--accent;
+			  color: lighten(@contrast--light, 15%);
 		}
-
+	
 		.style--accent & {
-			background: @color--light;
-			border-color: transparent;
-		  	color: @contrast--light;
+			  color: lighten(@contrast--accent, 15%);
 		}
-
+	
 		.style--dark & {
-			background: @color--light;
-			border-color: transparent;
-		  	color: @contrast--light;
+			  color: lighten(@contrast--dark, 15%);
 		}
-
+	
 		&:hover {
-			background-color: @font-swatch7-background-color-hover;
-			padding: 12px 30px 12px 58px;
+			cursor: pointer;
+		}
+	
+		@media @mobile {
+			display: inline-block;
+			background-image: image('/images/call-icon.svg');
 			background-size: 30px;
+			background-repeat: no-repeat;
 			background-position: 20px center;
+			padding: 12px 30px 12px 58px;
+			border: 2px solid @spare-color;
+			.border-radius(40px);
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: .1em;
+			font-family: @font-swatch7-font-family;
+			font-size: @font-swatch7-font-size;
+			font-weight: @font-swatch7-font-weight;
+			line-height: @font-swatch7-line-height;
+			background-color: @font-swatch7-background-color;
+			color: @font-swatch7-color;
+			width: 100%;
 			.transition (all, 0.5s, ease);
-
+	
 			.style--light & {
-				background-color: lighten(@contrast--light, 15%);
+				background: @color--accent;
+				border-color: transparent;
+				  color: @contrast--accent;
 			}
-
+	
 			.style--accent & {
-				background-color: lighten(@contrast--accent, 15%);
+				background: @color--light;
+				border-color: transparent;
+				  color: @contrast--light;
 			}
-
+	
 			.style--dark & {
-				background-color: lighten(@contrast--dark, 15%);
+				background: @color--light;
+				border-color: transparent;
+				  color: @contrast--light;
+			}
+	
+			&:hover {
+				background-color: @font-swatch7-background-color-hover;
+				padding: 12px 30px 12px 58px;
+				background-size: 30px;
+				background-position: 20px center;
+				.transition (all, 0.5s, ease);
+	
+				.style--light & {
+					background-color: lighten(@contrast--light, 15%);
+				}
+	
+				.style--accent & {
+					background-color: lighten(@contrast--accent, 15%);
+				}
+	
+				.style--dark & {
+					background-color: lighten(@contrast--dark, 15%);
+				}
 			}
 		}
 	}
