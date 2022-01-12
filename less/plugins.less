@@ -511,40 +511,41 @@
 	top: 4px;
 }
 
+// Basket Summary
+
 .basket-summary-items-table {
-		td, th {
-			@media @mobile {
-				float: left;
-				width: 100%;
-				padding: 3px 0;
-			}
+	td, th {
+		@media @mobile {
+			float: left;
+			width: 100%;
+			padding: 3px 0;
 		}
+	}
 
-		.image-wrap {
-			@media @mobile {
-				padding: 10px;
-			}
+	.image-wrap {
+		@media @mobile {
+			padding: 10px;
 		}
+	}
 
-		.basket-summary-amount, 
-		.basket-summary-subtotal {
-			@media @mobile {
-				padding: 10px 0;
-				text-align: right;
-			}
+	.basket-summary-amount, 
+	.basket-summary-subtotal {
+		@media @mobile {
+			padding: 10px 0;
+			text-align: right;
 		}
+	}
 
-		.basket-summary-items-column {
-			@media @mobile {
-				text-align: left;
-			}
+	.basket-summary-items-column {
+		@media @mobile {
+			text-align: left;
 		}
+	}
 
-		.basket-summary-amount-column,
-		.basket-summary-details-column {
-			@media @mobile {
-				display: none;
-			}
+	.basket-summary-amount-column,
+	.basket-summary-details-column {
+		@media @mobile {
+			display: none;
 		}
 	}
 }
@@ -552,4 +553,17 @@
 .basket-summary-empty-cta,
 .ecombasket-summary-link {
 	display: inline-block;
+}
+
+.basket-summary-continue-shopping,
+.basket-summary-submit {
+	margin-left: 0;
+	margin-right: 10px;
+	margin-bottom: 10px;
+
+	@media @mobile {
+		margin-right: 0;
+		width: 100%;
+		text-align: center;
+	}
 }
