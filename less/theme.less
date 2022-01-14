@@ -147,10 +147,9 @@ p, li {
 	list-style-position: inherit;
 }
 
-.widget {
+.widget, .widget.in-editing {
 	p, span, small, pre, code,
-	table, th, td,
-	&.content {
+	table, th, td, .content {
 		color: @font-swatch5-color;
 	
 		.style--light & {
@@ -165,6 +164,12 @@ p, li {
 			color: @contrast--dark;
 		}
 	}
+}
+
+.widget .content,
+.widget.in-editing .content {
+	font-size: @font-swatch5-font-size !important;
+	line-height: @font-swatch5-line-height !important;
 }
 
 // Preformatted and Code Text
