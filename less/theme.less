@@ -662,21 +662,38 @@ body.edit .widget.navigation, body.edit .widget.extendednavigation {
 
 // GENERAL FORMS
 
+label,
+.label,
+.widget label,
+.widget .label {
+	display: block;
+	font-family: @font-swatch5-font-family;
+	font-size: @font-swatch5-font-size;
+	font-weight: @font-swatch5-font-weight;
+	line-height: @font-swatch5-line-height;
+	color: @font-swatch5-color;
+	letter-spacing: @font-swatch5-letter-spacing;
+	margin-bottom: 1em;
+	padding: 0;
+
+	.style--light & {
+	  	color: lighten(@contrast--light, 15%);
+	}
+
+	.style--accent & {
+	  	color: lighten(@contrast--accent, 15%);
+	}
+
+	.style--dark & {
+	  	color: lighten(@contrast--dark, 15%);
+	}
+}
+
 input,
 textarea,
+.widget input,
+.widget textarea,
 select,
-.contactform input,
-.contactform textarea,
-.signupform fieldset input,
-.signupform fieldset input.email,
-.advancedcontactform input,
-.advancedcontactform textarea,
-.userregistration fieldset input,
-.widget.profile form fieldset input,
-.blogsearch input.blog-search-input,
-.productlist-filter .productlist-search input,
-.widget input[type="text"],
-.widget input[type="email"],
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
 	background: @bg-color;
@@ -757,33 +774,6 @@ textarea {
 	height: 100px;
 }
 
-label,
-.label,
-.contactform label,
-.advancedcontactform label {
-	display: block;
-	font-family: @font-swatch5-font-family;
-	font-size: @font-swatch5-font-size;
-	font-weight: @font-swatch5-font-weight;
-	line-height: @font-swatch5-line-height;
-	color: @font-swatch5-color;
-	letter-spacing: @font-swatch5-letter-spacing;
-	margin-bottom: 1em;
-	padding: 0;
-
-	.style--light & {
-	  	color: lighten(@contrast--light, 15%);
-	}
-
-	.style--accent & {
-	  	color: lighten(@contrast--accent, 15%);
-	}
-
-	.style--dark & {
-	  	color: lighten(@contrast--dark, 15%);
-	}
-}
-
 select {
 	cursor: pointer;
 	position: relative;
@@ -810,6 +800,7 @@ select {
 		color: lighten(@contrast--dark, 15%);
 	}
 }
+
 :-moz-placeholder {
 	.style--light & {
 		color: lighten(@contrast--light, 15%);
@@ -823,6 +814,7 @@ select {
 		color: lighten(@contrast--dark, 15%);
 	}
 }
+
 ::-moz-placeholder {
 	.style--light & {
 		color: lighten(@contrast--light, 15%);
@@ -836,6 +828,7 @@ select {
 		color: lighten(@contrast--dark, 15%);
 	}
 }
+
 :-ms-input-placeholder {
 	.style--light & {
 		color: lighten(@contrast--light, 15%);
@@ -850,7 +843,7 @@ select {
 	}
 }
 
-// ADVANCED CONTACT FORM
+// ADVANCED AND CONTACT FORM
 
 .advancedcontactform__form-group,
 .contactform .form-group {
