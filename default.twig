@@ -1,35 +1,32 @@
 {% extends "layout.twig" %}
-
 {% block content %}
 
 <div class="bk-pt-default">
-
-<header class="bk-header">
-	{{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
-	<div class="companyheader clearfix">
-		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
-		{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
-	</div>
-</header>
-
-<div class="main">
-	<div class="container clearfix">
-		{{widget('pagetitle', 'title', {})|raw}}
-		{{zone('main')|raw}}
-	</div>
-</div>
-
-<footer class="bk-footer">
-	<div class="container clearfix">
-		<div class="footerleft">
-		{{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+	<header class="bk-header">
+		{{widget('extendednavigation', 'navigationheader', {"align":"right"})|raw}}
+		<div class="companyheader clearfix">
+			{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+			{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
 		</div>
-		<div class="footerright">
-		{{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+	</header>
+
+	<div class="main">
+		<div class="container clearfix">
+			{{widget('pagetitle', 'title', {})|raw}}
+			{{zone('main')|raw}}
 		</div>
 	</div>
-</footer>
 
+	<footer class="bk-footer">
+		<div class="container clearfix">
+			<div class="footerleft">
+			{{widget('profile', 'footerprofileleft', { 'profileType' : 'socialicons' })|raw}}
+			</div>
+			<div class="footerright">
+			{{widget('profile', 'footerprofileright', { 'profileType':'copyright', 'copyright':'profile'})|raw}}
+			</div>
+		</div>
+	</footer>
 </div>
 
 {% endblock %}

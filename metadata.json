@@ -1,13 +1,20 @@
 {
-	"name":"El Nido",
-	"templateType":"standard",
+	"name": "El Nido",
+	"templateType": "standard",
 	"versionTenCompatible": 1,
-	"pageTypes":["home"],
-	"thumbnail":"thumbnail.png",
-	"screenshot":"elnido-screenshot.jpg",
+	"pageTypes": ["home"],
+	"thumbnail": "images/thumbnail.png",
+	"screenshot": "images/screenshot.jpg",
 	"images": [
-		"images/feature-bg.jpg"
-	],
+	   "images/gallery/gallery-image--1.jpg",
+	   "images/gallery/gallery-image--2.jpg",
+	   "images/gallery/gallery-image--3.jpg",
+	   "images/gallery/gallery-image--4.jpg",
+	   "images/gallery/gallery-image--5.jpg",
+	   "images/gallery/gallery-image--6.jpg",
+	   "images/gallery/gallery-image--7.jpg",
+	   "images/gallery/gallery-image--8.jpg"
+   ],
 	"colorSwatches":
 	{
 		"Swatch 1": {

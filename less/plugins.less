@@ -442,15 +442,11 @@
 		}
 
 		.ecom-product-add-to-cart-btn-wrapper {
-			width: 65%;
-			float: left;
-			padding-right: 2em;
+			margin: 1em 1em 1em 0;
 
 			@media @mobile {
 				width: 100%;
-				float: none;
-				padding-right: 0;
-				margin-bottom: 1em;
+				margin-right: 1em 0;
 			}
 
 			.ecom-product-add-to-cart-btn span {
@@ -459,8 +455,8 @@
 		}
 
 		.ecom-product-go-to-checkout-btn-wrapper {
-			width: 35%;
 			text-align: center;
+
 			@media @mobile {
 				width: 100%;
 			}
@@ -477,7 +473,8 @@
 
 		.ecom-product-go-to-checkout-btn-wrapper a {
 			display: block;
-			padding: 12px;
+			padding: 8px 30px;
+			line-height: 38px;
 		}
 
 		.ecom-product-cattag {
@@ -562,12 +559,17 @@
 
 .svg .widget.ecombasket .ecombasket-pull p:before,
 .widget.ecomproduct .ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
-	background-image: image('/images/basket.svg');
-	background-size: 100%;
-	width: 20px;
-	height: 20px;
-	position: relative;
-	top: 4px;
+    content: '\f291';
+    display: inline-block;
+    top: 0;
+    margin-top: -0.25em;
+    margin-right: 0.5em;
+    background-image: none;
+    height: 1.5em;
+    width: 1.5em;
+    font-family: 'FontAwesome';
+    text-indent: 0;
+    font-size: 1.25em;
 }
 
 // Basket Summary
