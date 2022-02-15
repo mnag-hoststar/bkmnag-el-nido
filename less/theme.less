@@ -664,6 +664,7 @@ label,
 	letter-spacing: @font-swatch5-letter-spacing;
 	margin-bottom: 1em;
 	padding: 0;
+    word-break: break-word;
 
 	.style--light & {
 	  	color: lighten(@contrast--light, 15%);
@@ -767,15 +768,18 @@ textarea {
 
 .select-wrap {
 	position: relative;
-	max-width: 50%;
 
-	@media @mobile {
-		max-width: 100%;
-	}
+    .advancedcontactform & {
+        max-width: 50%;
 
-	.responsivecolumns & {
-		max-width: 100%;
-	}
+        @media @tablet {
+            max-width: 100%;
+        }
+    
+        .responsivecolumns & {
+            max-width: 100%;
+        }
+    }
 }
 
 select {
