@@ -918,7 +918,7 @@
 	color: @heading-color;
 
 	.style--light & {
-	  	color: @contrast--light;
+	  	color: @heading-color;
 	}
 
 	.style--accent & {
@@ -933,7 +933,7 @@
 		color: lighten(@color-swatch4, 20%);
 
 		.style--light & {
-		  	color: lighten(@contrast--light, 20%);
+		  	color: lighten(@color-swatch4, 20%);
 		}
 
 		.style--accent & {
@@ -952,7 +952,7 @@
 	color: @paragraph-color;
 
 	.style--light & {
-	  	color: lighten(@contrast--light, 15%);
+	  	color: @paragraph-color;
 	}
 
 	.style--accent & {
@@ -967,7 +967,7 @@
 		color: lighten(@color-swatch5, 20%);
 
 		.style--light & {
-		  	color: lighten(@contrast--light, 20%);
+		  	color: lighten(@color-swatch5, 20%);
 		}
 
 		.style--accent & {
@@ -1101,7 +1101,7 @@
 			line-height: 0;
 
 			.style--light & {
-				background-color: @color--accent;
+				background-color: @button-color;
 			}
 
 			.style--accent & {
@@ -1123,7 +1123,7 @@
 				margin-left: -5px;
 
 				.style--light & {
-					color: @contrast--accent;
+					color: @font-swatch7-color;
 				}
 			
 				.style--accent & {
@@ -1148,7 +1148,7 @@
 				border-left: 15px solid @font-swatch7-color;
 
 				.style--light & {
-					border-left-color: @contrast--accent;
+					border-left-color: @font-swatch7-color;
 				}
 			
 				.style--accent & {
@@ -1170,8 +1170,8 @@
 				border-right: 3px solid @font-swatch7-color;
 
 				.style--light & {
-					border-left-color: @contrast--accent;
-					border-right-color: @contrast--accent;
+					border-left-color: @font-swatch7-color;
+					border-right-color: @font-swatch7-color;
 				}
 			
 				.style--accent & {
@@ -1199,7 +1199,7 @@
 				height: 12px;
 
 				.style--light & {
-					border-color: @contrast--accent;
+					border-color: @font-swatch7-color;
 				}
 			
 				.style--accent & {
@@ -1265,7 +1265,7 @@
 			cursor: pointer;
 
 			.style--light & {
-				border-color: darken(@color--light, 12%);
+				border-color: @contrast-color;
 			}
 
 			.style--accent & {
@@ -1282,7 +1282,7 @@
 			border: none;
 
 			.style--light & {
-				background-color: @color--accent;
+				background-color: @button-color;
 			}
 
 			.style--accent & {
@@ -1333,8 +1333,8 @@ form.blog-search-form .form-group button,
 	.transition (all, 0.5s, ease);
 
 	.style--light & {
-		background-color: @color--accent;
-	  	color: @contrast--accent;
+		background-color: @button-color;
+	  	color: @font-swatch7-color;
 	}
 
 	.style--accent & {
@@ -1354,8 +1354,8 @@ form.blog-search-form .form-group button,
 		.transition (all, 0.5s, ease);
 
 		.style--light & {
-			background-color: lighten(@color--accent, 15%);
-		  	color: @contrast--accent;
+			background-color: @font-swatch7-background-color-hover;
+		  	color: @font-swatch7-color-hover;
 		}
 
 		.style--accent & {
@@ -1384,7 +1384,7 @@ form.blog-search-form .form-group button,
 	color: @font-swatch7-color;
 
 	.style--light & {
-		color: @contrast--accent;
+		color: @font-swatch7-color;
 	}
 
 	.style--accent & {
@@ -1523,7 +1523,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 			border: 1px solid @contrast-color;
 
 			.style--light & {
-				border-color: darken(@color--light, 12%);
+				border-color: @contrast-color;
 			}
 
 			.style--accent & {
@@ -1547,6 +1547,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 	.twitter-content {
 		p {
 			padding: 0;
+
 			a {
 				font-size: @font-swatch5-font-size;
 			}
@@ -1556,18 +1557,6 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 			font-family: @font-swatch5-font-family;
 			font-size: bkscale(@font-swatch5-font-size,0.9);
 			text-decoration: none;
-
-			.style--light & {
-			  	color: lighten(@contrast--light, 15%);
-			}
-
-			.style--accent & {
-			  	color: lighten(@contrast--accent, 15%);
-			}
-
-			.style--dark & {
-			  	color: lighten(@contrast--dark, 15%);
-			}
 
 			&:hover {
 				text-decoration: none;
@@ -1581,7 +1570,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 			text-transform: uppercase;
 
 			.style--light & {
-			  	color: @contrast--light;
+			  	color: @font-swatch4-color;
 			}
 
 			.style--accent & {
@@ -1598,7 +1587,7 @@ footer.bk-footer .widget.profile .bk-profile-socialicons {
 			text-decoration: none;
 
 			.style--light & {
-			  	color: @color--accent;
+			  	color: @color-swatch3;
 			}
 
 			.style--accent & {
@@ -1623,7 +1612,7 @@ hr.line {
 	margin: 1em 0;
 
 	.style--light & {
-		background-color: darken(@color--light, 12%);
+		background-color: @contrast-color;
 	}
 
 	.style--accent & {
@@ -1657,7 +1646,7 @@ hr.line {
 	margin-bottom: 2em;
 
 	.style--light & {
-		border-color: darken(@color--light, 12%);
+		border-color: @contrast-color;
 	}
 
 	.style--accent & {
