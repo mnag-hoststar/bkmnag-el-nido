@@ -74,7 +74,8 @@
 	}
 }
 
-.blog-post-tags li a, .blog-post-category a {
+.blog-post-tags li a,
+.blog-post-category a {
 	border: 1px solid @contrast-color;
 	padding: 1px 12px 2px;
 	display: inline-block;
@@ -261,6 +262,10 @@
 	vertical-align: top;
 	overflow: visible;
 
+	a:hover {
+		text-decoration: none;
+	}
+
 	@media @tablet {
 		width: 45%;
 		margin-right: 4%;
@@ -282,6 +287,13 @@
 .widget.ecomproductslist .ecom-productslist-image-wrap,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap {
 	background-position: center;
+}
+
+.widget.ecomproductslist .ecom-productslist-image,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image {
+	display: none;
+    height: 100%;
+    margin: 0 auto;
 }
 
 // Price
@@ -409,10 +421,11 @@
 		}
 	}
 
-	.product-actions {
+	.product-product {
 		button {
 			margin-bottom: 1em;
 			text-align: center;
+			min-width: 250px;
         
 			@media @mobile {
 				width: 100%;

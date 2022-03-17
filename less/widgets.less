@@ -239,7 +239,7 @@
 	    &:after {
     		.language-selector.language-selector--dropdown & {
 				position: absolute;
-        		content: "\25be";
+        		content: '\25be';
         		top: 50%;
         		right: 0;
         		margin-top: -(@font-swatch6-line-height/4);
@@ -509,6 +509,7 @@
 					text-transform: uppercase;
 					color: @font-swatch6-color;
 					border-bottom: 2px solid transparent;
+					word-break: break-word;
 
 					@media @tablet {
 						padding: 10px 0;
@@ -547,7 +548,7 @@
 	
 					&:after {
 						display: block;
-						content: "";
+						content: '';
 						position: absolute;
 						top: 50%;
 						right: -1.4em;
@@ -651,6 +652,7 @@
 								color: @font-swatch6-background-color;
 								border-bottom: none;
 								.transition (all, 0.5s, ease);
+								word-break: break-word;
 
 								@media @tablet {
 									color: @font-swatch6-background-color;
@@ -1311,7 +1313,7 @@ button.button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.socialicons span a,
-footer.bk-footer .widget.profile .bk-profile-socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
@@ -1412,11 +1414,12 @@ form.blog-search-form .form-group button,
 .widget.dropbox button span,
 .widget.filedownload button.btn {
 	&:before {
-		float: left;
-		padding-right: 0.5em;
+        position: relative;
+        top: 0.1em;
+		padding-right: 0.25em;
 		background-image: none;
 		font-family:'FontAwesome';
-		font-size: 1.5em;
+		font-size: 1.25em;
 	}
 }
 
@@ -1434,7 +1437,7 @@ form.blog-search-form .form-group button,
 // SOCIAL ICONS
 
 .widget.socialicons,
-footer.bk-footer .widget.profile .bk-profile-socialicons {
+.widget.profile .bk-profile-socialicons {
 	span {
 		display: inline-block;
 

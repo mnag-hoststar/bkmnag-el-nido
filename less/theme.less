@@ -114,7 +114,7 @@ h5 {
 
 // Normal Text
 
-p, li {
+p, ul, ol, li {
 	color: lighten(@font-swatch5-color, 15%);
 
 	.style--light & {
@@ -136,28 +136,26 @@ p, li {
 
 // Normal Text
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font-swatch5-font-size !important;
-		line-height: @font-swatch5-line-height !important;	
+.widget.content .wysihtml-editor-content,
+.widget.embed .embed-content,
+.widget.content.in-editing .wysihtml-editor-content {
+	font-size: @font-swatch5-font-size !important;
+	line-height: @font-swatch5-line-height !important;	
+
+	&, p, span, small, pre, code,
+	table, th, td {
+		color: @font-swatch5-color;
 	
-		&, p, span, small, pre, code,
-		table, th, td {
+		.style--light & {
 			color: @font-swatch5-color;
-		
-			.style--light & {
-				color: @font-swatch5-color;
-			}
-		
-			.style--accent & {
-				color: @contrast--accent;
-			}
-		
-			.style--dark & {
-				color: @contrast--dark;
-			}
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
 		}
 	}
 }
@@ -250,7 +248,7 @@ blockquote {
 	
 			&:before {
 				position: absolute;
-				content: "\2013";
+				content: '\2013';
 				left: -2em;
 			}
 		}
@@ -291,6 +289,7 @@ blockquote {
 table {
 	overflow: auto;
 	width: 100%;
+	max-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -956,7 +955,6 @@ select {
 .option-item.option-item--checkbox,
 .widget form .form-group[class*="form-group--terms"] {
 	label:after {
-		margin-top: floor(@font-swatch5-line-height*-0.2+1);
 		margin-left: floor(@font-swatch5-line-height*0.2);
 		height: floor(@font-swatch5-line-height*1.2);
 		width: floor(@font-swatch5-line-height*0.8);
@@ -988,7 +986,6 @@ select {
 			border-radius: 50%;
 			background-color: @font-swatch7-background-color;
 			border: 1px solid @font-swatch7-background-color;
-			margin-top: floor(@font-swatch5-line-height*0.15);
 			margin-left: floor(@font-swatch5-line-height*0.15);
 			height: floor(@font-swatch5-line-height*0.8);
 			width: floor(@font-swatch5-line-height*0.8);
@@ -1108,7 +1105,7 @@ select {
 
 .clearfix:before,
 .clearfix:after {
-	content: " ";
+	content: ' ';
 	display: table;
 }
 
