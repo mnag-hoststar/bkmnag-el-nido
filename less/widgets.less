@@ -1,34 +1,52 @@
 // Widgets
 
+// Company Header
+
+.companyheader {
+    display: flex;
+    align-items: center;
+    height: 60px;
+
+	.bk-pt-home & {
+		width: 50%;
+
+		@media @tablet {
+			width: auto;
+		}
+	}
+}
+
 // LOGO
 
 .widget.logo {
-	display: table-cell;
-	vertical-align: middle;
 	line-height: 0;
 }
 
 // COMPANY NAME
 
 .widget.companyname {
-	display: table-cell;
-	vertical-align: middle;
-	text-transform: uppercase;
 	padding-left: 10px;
+	padding-right: 30px;
+
+	@media @tablet {
+		display: block;
+		width: 80%;
+		padding-right: 0;
+		float: left;
+	}
 
 	a {
 		display: inherit;
-		word-break: break-word;
 		text-decoration: none;
 
 		@media @mobile {
 			font-size: bkscale(@font-swatch10-font-size,0.9);
 		}
+		
+		&:hover {
+			text-decoration: none;
+		}
 	}
-}
-
-.companyname a:hover {
-	text-decoration: none;
 }
 
 // LANGUAGE SELECTOR
@@ -361,45 +379,41 @@
 
 .widget.navigation,
 .widget.extendednavigation {
-	float: right;
-	width: 50%;
     padding-left: 40px;
     box-sizing: border-box;
+	flex-grow: 1;
 
 	@media @tablet {
 		display: block;
-		width: auto;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-        padding-left: 0;
-        margin: 0 !important;
+		position: static;
+		padding-left: 0;
+	}
+
+	.bk-pt-home & {
+		width: 50%;
+
+		@media @tablet {
+			width: auto;
+		}
+	}
+
+	body.edit & {
+		overflow: visible;
 	}
 
 	.extendednavigation {
 		@media @tablet {
-			display: block;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			min-height: 28px;
+			position: static;
 		}
 
 		a.pull {
 			@media @tablet {
-				display: inline-block;
-				top: 0;
-				right: 5%;
+				position: absolute;
+				top: 50%;
+				right: 30px;
 				width: 30px;
-				height: 100%;
-			}
-			
-			@media @mobile {
-				top: 0;
+				height: 30px;
+				margin-top: -15px;
 			}
 		
 			&:after {
@@ -407,6 +421,7 @@
 					top: 50%;
 					left: 0;
 					right: 0;
+					margin-top: -2px;
 					height: 3px;
 					width: 30px;
 					background-color: @font-swatch6-color;
@@ -422,13 +437,14 @@
 		margin: 0 auto;
 		display: block;
 		float: none !important;
-		font-size: 0;
 
 		@media @tablet {
 			display: none;
             position: absolute;
-            top: 100%;
-            padding: 20px;
+			top: 100%;
+			left: 0;
+			right: 0;
+            padding: 0 30px 20px 30px;
 			width: 100%;
 		    background-color: @bg-color;
 		}
@@ -442,6 +458,7 @@
 				padding: 0;
 				text-align: center;
 				background-color: @bg-color;
+				float: left !important;
 			}
 
 			&:hover {
@@ -457,25 +474,22 @@
 			}
 
 			a {
-				padding: 0;
-				margin: 0 30px;
+				margin: 0;
+				padding: 0 15px;
 				text-decoration: none;
 
 				@media @tablet {
-					padding: 10px 0;
+					padding: 10px 15px;
 					color: @font-swatch6-color;
 				}
 
 				span {
 					text-transform: uppercase;
-					padding: 2px 1px 0;
-					border-bottom: 2px solid transparent;
 					.transition (all, 0.5s, ease);
 					color: @font-swatch6-color;
 
 					@media @tablet {
 						padding: 0;
-						border-bottom: none;
 						color: @font-swatch6-color;
 					}
 			
@@ -488,11 +502,14 @@
 					}
 
 					&:hover {
-						border-bottom: 2px solid @font-swatch6-color;
 						.transition (all, 0.5s, ease);
+						text-decoration: underline;
+						text-decoration-style: solid;
+						text-underline-offset: 5px;
+						text-decoration-thickness: 2px;
 
 						@media @tablet {
-							border-bottom: none;
+							text-decoration: none;
 						}
 
 						.bk-pt-home & {
@@ -514,17 +531,15 @@
 				> .text {
 					.transition (all, 0.5s, ease);
 					display: block;
-					padding: 2px 1px 0;
-					margin: 0 30px 0 30px;
+					padding: 0 35px 0 15px;
+					margin: 0;
 					text-transform: uppercase;
 					color: @font-swatch6-color;
-					border-bottom: 2px solid transparent;
 					word-break: break-word;
 
 					@media @tablet {
-						padding: 10px 0;
+						padding: 10px 35px 10px 15px;
 						color: @font-swatch6-color;
-						border-bottom: none;
 					}
 
 					.bk-pt-home & {
@@ -536,12 +551,15 @@
 					}
 
 					&:hover {
-						border-bottom: 2px solid @font-swatch6-color;
 						color: @font-swatch6-color;
+						text-decoration: underline;
+						text-decoration-style: solid;
+						text-underline-offset: 5px;
+						text-decoration-thickness: 2px;
 
 						@media @tablet {
-							border-bottom: none;
 							color: @font-swatch6-color;
+							text-decoration: none;
 						}
 
 						.bk-pt-home & {
@@ -561,17 +579,16 @@
 						content: '';
 						position: absolute;
 						top: 50%;
-						right: -1.4em;
+						right: 15px;
 						border: 2px solid @font-swatch6-color;
 						transform: rotate(45deg);
-						margin-top: -0.5em;
-						width: 0.5em;
-						height: 0.5em;
+						margin-top: -0.35em;
+						width: 0.4em;
+						height: 0.4em;
 						border-top: transparent;
 						border-left: transparent;
 
 						@media @tablet {
-							right: -1.2em;
 							border-color: @font-swatch6-color;
 						}
 			
@@ -613,7 +630,7 @@
 					overflow: hidden;
 					top: 100%;
 					left: auto;
-					right: 0;
+					right: 10px;
 					margin-top: 10px;
 					padding: 0;
 					min-width: 200px;
@@ -646,11 +663,11 @@
 					li {
 						display: block;
 						padding: 10px;
-						transition: all 0.25s ease 0s;
+						.transition(all, 0.5s, ease);
 	
 						@media @tablet {
 							margin: 0;
-							padding: 10px 0;
+							padding: 10px 15px;
 							background-color: @font-swatch6-color;
 							border-color: fade(@font-swatch6-background-color, 20%);
 						}
@@ -677,7 +694,6 @@
 								overflow: visible;
 								word-break: break-word;
 								color: @font-swatch6-background-color;
-								border-bottom: none;
 								.transition (all, 0.5s, ease);
 
 								@media @tablet {
@@ -694,8 +710,6 @@
 	
 								&:hover {
 									color: @font-swatch6-background-color;
-									border-bottom: none;
-									.transition (all, 0.5s, ease);
 
 									@media @tablet {
 										color: @font-swatch6-background-color;
@@ -759,6 +773,7 @@
 			width: 100%;
 			padding-top: 100vh;
 			background-size: auto 100vh;
+			background-position: top center !important;
 		}
 		
 		.content {
@@ -1269,14 +1284,14 @@
 	}
 
 	.slideshow-widget-controls {
-		margin: 10px 0;
+		margin: 10px 0 20px;
 
 		.dot {
 			background-color: transparent;
-			border: 1px solid @contrast-color;
+			border: 2px solid @contrast-color;
 		    .border-radius(50%);
-			width: 8px;
-			height: 8px;
+			width: 12px;
+			height: 12px;
 			margin: 0 4px;
 			cursor: pointer;
 
@@ -1285,11 +1300,11 @@
 			}
 
 			.style--accent & {
-				border-color: darken(@color--accent, 12%);
+				border-color: @contrast--accent;
 			}
 
 			.style--dark & {
-				border-color: lighten(@color--dark, 10%);
+				border-color: @contrast--dark;
 			}
 		}
 
@@ -1302,11 +1317,11 @@
 			}
 
 			.style--accent & {
-				background-color: @color--dark;
+				background-color: @contrast--accent;
 			}
 
 			.style--dark & {
-				background-color: @color--accent;
+				background-color: @contrast--dark;
 			}
 		}
 	}
@@ -1325,6 +1340,7 @@ button.button,
 .advancedcontactform button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -1341,7 +1357,7 @@ form.blog-search-form .form-group button,
 	background-color: @button-color;
 	background-repeat: no-repeat;
 	border: none;
-	height: auto !important;
+	height: auto;
 	.border-radius(1.25em);
 	color: @font-swatch7-color;
 	font-family: @font-swatch7-font-family;
@@ -1473,15 +1489,14 @@ form.blog-search-form .form-group button,
 		display: inline-block;
 
 		a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			display: inline-block;
 			border: none;
 			background-image: none;
 			margin: 0 5px 10px;
 			padding: 0;
 			width: 36px;
 			height: 36px;
+			line-height: 36px;
 			.border-radius(50%);
 			.transition (all, 0.5s, ease);
 			text-indent: 0;

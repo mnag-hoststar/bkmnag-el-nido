@@ -247,7 +247,8 @@ blockquote {
 		color: @contrast--dark;
 	}
 
-	&:before {
+	&:before,
+	&:after {
 		display: none;
 	}
 }
@@ -518,52 +519,32 @@ tr:last-child td {
 	}
 }
 
-// CUSTOM PAGE
-
-body.edit .widget.navigation,
-body.edit .widget.extendednavigation {
-	overflow: visible;
-}
 
 // HEADER & #BK-NAV
 
 .bk-header {
-	padding: 40px;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 100;
+	display: flex;
+	padding: 40px;
 	
 	@media @tablet {
 		background-color: @bg-color;
-		display: inline-block;
 	    padding: 10px 30px;
 		position: relative;
 		width: 100%;
 	}
-	
-	.companyheader {
-		display: inline-block;
-		vertical-align: middle;
-		padding-right: 30px;
-		width: 50%;
 
-		@media @tablet {
-			display: block;
-			width: 80%;
-			padding-right: 0;
-			float: left;
-		}
+	.bk-pt-default & {
+		position: relative;
 	}
 }
 
-.bk-pt-default {
-	.bk-header {
-		position: relative;
-	}
-
-	.main {
+.main {
+	.bk-pt-default & {
 		padding: 60px 0;
 
 		@media @tablet {
@@ -699,6 +680,8 @@ input:-webkit-autofill:focus {
 	border: none;
 	border: 1px solid darken(@contrast-color, 10%);
 	margin-bottom: 1em;
+    height: auto !important;
+    min-height: 40px;
 	outline: none;
 	padding: 0 10px;
 	text-indent: 0;
@@ -759,8 +742,9 @@ select {
 	height: 40px;
 }
 
-textarea {
-	height: 100px;
+textarea,
+.widget textarea {
+	min-height: 100px;
 }
 
 // Dropdown

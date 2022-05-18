@@ -9,23 +9,24 @@
 
 
 // Template styling resets
-// ------------------------------------
 
 #migrated {
 
-	.bk-header {
-		@media only screen and (min-width: 930px) {
-			left: 100px;
-			right: 100px;
-		}
+	// Basekit Elements
+
+	.top-level-overlay button.top-level-overlay__delete-button,
+	.row-overlay__delete-button,
+	.top-level-overlay .top-level-overlay__arrangement-button-group,
+	.row-overlay__arrangement-button-group, .row-overlay__edit-button,
+	.row-overlay__edit-button {
+		min-height: 32px !important;
 	}
 
-	.bk-pt-default .bk-header {
-		@media only screen and (min-width: 930px) {
-			left: 0;
-			right: 0;
-		}
+	.is-dropdown-open .row-overlay__edit-button, .is-setting-open .row-overlay__edit-button {
+		min-height: 40px !important;
 	}
+
+    // Main
 
 	.main {
 		padding: 0;
@@ -41,19 +42,14 @@
 
 
 // Row improvments
-// ------------------------------------
 
 #migrated .row--image-text-7a [data-name="content"] blockquote {
 	padding: 16px;
 }
 
-
-
 // Re-add the reset styles
-// ------------------------------------
 
 #migrated {
-
 	.empty-zone,
     #page-zones__main:empty,
     #page-zones__main > .widget:not([data-name="row"]),
@@ -85,5 +81,14 @@
     &.edit #page-zones__main:empty {
         margin-bottom: 30px;
         margin-top: 30px;
+    }
+
+    // Pricing Table
+    .row--layout-pricing-1a .column ul li {
+        padding-left: 2.5em;
+    
+        &:before {
+            content: none;
+        }
     }
 }
