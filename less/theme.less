@@ -693,14 +693,17 @@ input:-webkit-autofill:focus {
 
 	.style--light & {
 		border-color: darken(@contrast-color, 10%);
+		color: @font-swatch5-color;
 	}
 
 	.style--accent & {
 		border-color: fade(@contrast--accent, 60%);
+		color: @font-swatch5-color;
 	}
 
 	.style--dark & {
 		border-color: fade(@contrast--dark, 60%);
+		color: @font-swatch5-color;
 	}
 
 	&:hover,
@@ -746,6 +749,7 @@ select {
 textarea,
 .widget textarea {
 	min-height: 100px;
+	padding: 5px 10px;
 }
 
 // Dropdown
