@@ -5,13 +5,17 @@
 .companyheader {
     display: flex;
     align-items: center;
-    height: 60px;
+    min-height: 60px;
+
+	@media @tablet {
+		width: calc(~"100% - 50px");
+	}
 
 	.bk-pt-home & {
 		width: 50%;
 
 		@media @tablet {
-			width: auto;
+			width: calc(~"100% - 50px");
 		}
 	}
 }
@@ -30,7 +34,6 @@
 
 	@media @tablet {
 		display: block;
-		width: 80%;
 		padding-right: 0;
 		float: left;
 	}
@@ -868,14 +871,8 @@
 						}
 						
 						@media @tablet {
-							font-size: bkscale(@font-swatch7-font-size, 0.6);
-							line-height: bkscale(@font-swatch7-line-height, 0.6);
-						}
-
-						@media @mobile {
-							width: 100%;
-							font-size: bkscale(@font-swatch7-font-size,0.7);
-							line-height: bkscale(@font-swatch7-line-height,0.7);
+							font-size: bkscale(@font-swatch7-font-size, 0.9);
+							line-height: bkscale(@font-swatch7-line-height, 0.9);
 						}
 					}
 				}
