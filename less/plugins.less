@@ -423,15 +423,18 @@
 		.ecom-product-cattag {
 			margin: 1.5em 0 0;
 			line-height: 36px;
-		}
 
-		a.ecom-product-tag-link,
-		a.store-category-link {
-			padding: 0 0 0 5px;
-			text-decoration: none;
-
-			&:hover {
-				color: darken(@color-swatch3, 15%);
+			a.ecom-product-tag-link,
+			a.store-category-link {
+				display: inline-block;
+				word-break: break-word;
+				line-height: 1.4em;
+				padding: 0 0 0 5px;
+				text-decoration: none;
+	
+				&:hover {
+					color: darken(@color-swatch3, 15%);
+				}
 			}
 		}
 	}
